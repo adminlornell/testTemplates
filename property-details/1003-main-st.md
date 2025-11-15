@@ -1,11 +1,18 @@
 # 1003 Main St
 
+**Building Name:** 
+    
+
 ## Property Overview
 
 **Property Type:** Multifamily
 **Secondary Type:** Dormitory
 **Status:** For Sale
 **Building Class:** B
+**Building Rating:** 3
+**Building Status:** Existing
+**Construction Status:** Existing
+**Condo Ownership:** No
 
 ## Location
 
@@ -16,34 +23,72 @@
 - **County:** Worcester
 - **Market:** Worcester, MA
 - **Submarket:** Outlying Worcester County
+- **Cluster:** Outlying Worcester County
+- **Cross Street:** 
+    
+- **Building Location:** 
+    
 - **Coordinates:** 42.2458909, -71.9055856
+- **Primary Corridors:** 
+    
 
 ## Building Details
 
 - **Building Size:** 4,888 SF
 - **Year Built:** 1950
+- **Month Built:** 
+    
 - **Year Renovated:** 
     
-- **Stories:** 3
+- **Month Renovated:** 
+    
 - **Typical Floor Size:** 1,629 SF
+- **Stories:** 3
 - **Land Area:** 0.745551 Acres (32,476 SF)
 - **Construction Type:** Masonry
+- **Construction Begin:** 
+    
+- **Collateral Type:** Single
 
 ## Financial Information
 
-- **Asking Price:** 500,000.00 - 1,500,000.00
 - **Rent Per SF:** Not Disclosed
-- **Occupancy Rate:** N/A
+- **Cap Rate:** 
+    %
 - **Tax Rate:** $0.9153/SF
 - **Annual Taxes:** $4,474
+- **Tax Year:** 2025
+- **Building Expenses:** 
+    
 - **Last Sale:** 
-     - Contact for Pricing
+     - None
+- **Days On Market:** 12
+- **Loan Amount:** $250,000
+- **Loan Type:** 
+    
+- **Interest Rate:** 
+     (
+    )
+- **Loan Origination:** 06/16/2025
+- **Originator:** Td Bank Na
+- **Loan Maturity:** 
+    
+- **Operating Expenses:** 
+    
+- **Operating Expenses Per SF:** $
+    /SF
 
 ## Space Availability
 
-- **Total Available Space:** N/A
-- **Vacant Space:** 0 SF
+- **Direct Vacant Space:** 0 SF
+- **Sublet Vacant Space:** 0 SF
+- **Max Floor Contiguous:** 
+    
+- **Smallest Available:** 
+    
 - **Services:** 
+    
+- **Sublet Services:** 
     
 
 ## Building Features
@@ -53,9 +98,13 @@
 - **Elevators:** 0
 - **Ceiling Height:** 
     
+- **Column Spacing:** 
+    
 - **Loading Docks:** 
     
 - **Drive-In Doors:** 
+    
+- **Cranes:** 
     
 - **Power:** 
     
@@ -69,13 +118,48 @@
     
 - **Sewer:** 
     
+- **Rail Line:** 
+    
 - **Tenancy:** 
     
 - **Zoning:** R2
+- **Scale:** Independent
 
 ## Amenities
 
-Controlled Access, Tenant Controlled HVAC, Recycling, Smoke Free, Smoke Free
+Controlled Access, Tenant Controlled HVAC, Recycling, Smoke Free
+
+## Energy & Certifications
+
+- Energy Star: 
+    
+- LEED Certified: 
+    
+
+## Anchor Tenants
+
+
+    
+
+## FEMA & Flood Information
+
+- FEMA Map Date: 06/21/2023
+- FEMA Map ID: 25027C0782F
+- Firm ID: 25027C
+- Firm Panel: 0782F
+- In SFHA: No
+- Floodplain Area: 100-year and 500-year Floodplain
+- FEMA Flood Zone: Area of moderate flood hazard, usually the area between the limits of the 100-year and 500-year floods.
+- Flood Risk Area: Moderate to Low Risk Areas
+
+## Transit
+
+- **Transit Stop:** 
+    
+- **Crow Distance:** 
+     miles
+- **Walk Time:** 
+    
 
 ## Contact Information
 
@@ -84,7 +168,24 @@ Controlled Access, Tenant Controlled HVAC, Recycling, Smoke Free, Smoke Free
     
 - **Contact:** 
     
+- **Contact 2:** 
+    
 - **Phone:** 
+    
+- **Address:** 
+    
+- **City/State/Zip:** 
+    
+- **Fax:** 
+    
+
+### Sale
+- **Company:** Lornell Real Estate
+- **Contact:** Collin Mulcahy
+- **Phone:** 8603057432
+- **Address:** 22 Cherry St
+- **City/State/Zip:** Spencer, MA 01562
+- **Fax:** 
     
 
 ### Owner
@@ -93,10 +194,36 @@ Controlled Access, Tenant Controlled HVAC, Recycling, Smoke Free, Smoke Free
     
 - **Phone:** 
     
+- **Address:** 64 Dewey St
+- **City/State/Zip:** Leicester, MA 01524
 
-## Property ID
+### Property Manager
+- **Name:** 
+    
+- **Contact:** 
+    
+- **Phone:** 
+    
+- **Address:** 
+    
+- **City/State/Zip:** 
+    
 
-20838062
+
+## Additional Information
+
+- **Property ID:** 20838062
+- **Parcel Number:** LEIC-000020CA000010
+- **Developer:** 
+    
+- **Architect:** 
+    
+- **Brand:** 
+    
+- **Institution:** 
+    
+- **Building Park:** 
+    
 
 ---
-*Generated from PropertyDetails.xml*
+*Generated from PropertyDetails.xml - Complete data extraction*

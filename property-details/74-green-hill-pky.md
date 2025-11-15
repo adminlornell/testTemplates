@@ -1,5 +1,8 @@
 # 74 Green Hill Pky
 
+**Building Name:** 
+    
+
 ## Property Overview
 
 **Property Type:** Multifamily
@@ -8,6 +11,11 @@
 **Status:** For Sale
 **Building Class:** 
     
+**Building Rating:** 
+    
+**Building Status:** Existing
+**Construction Status:** Existing
+**Condo Ownership:** No
 
 ## Location
 
@@ -18,34 +26,73 @@
 - **County:** Worcester
 - **Market:** Worcester, MA
 - **Submarket:** Brittan Square
+- **Cluster:** Outlying Worcester County
+- **Cross Street:** 
+    
+- **Building Location:** 
+    
 - **Coordinates:** 42.2806803, -71.7919072
+- **Primary Corridors:** 
+    
 
 ## Building Details
 
 - **Building Size:** 3,605 SF
 - **Year Built:** 1890
+- **Month Built:** 
+    
 - **Year Renovated:** 
     
-- **Stories:** 3
+- **Month Renovated:** 
+    
 - **Typical Floor Size:** 1,202 SF
+- **Stories:** 3
 - **Land Area:** 0.17 Acres (7,405 SF)
 - **Construction Type:** Wood Frame
+- **Construction Begin:** 
+    
+- **Collateral Type:** Single
 
 ## Financial Information
 
-- **Asking Price:** 800,000.00 - 2,400,000.00
 - **Rent Per SF:** Not Disclosed
-- **Occupancy Rate:** N/A
+- **Cap Rate:** 
+    %
 - **Tax Rate:** $1.7398/SF
 - **Annual Taxes:** $6,272
+- **Tax Year:** 2025
+- **Building Expenses:** 
+    
 - **Last Sale:** 
-     - Contact for Pricing
+     - None
+- **Days On Market:** 15
+- **Loan Type:** 
+    
+- **Interest Rate:** 
+     (
+    )
+- **Loan Origination:** 
+    
+- **Originator:** 
+    
+- **Loan Maturity:** 
+    
+- **Operating Expenses:** 
+    
+- **Operating Expenses Per SF:** $
+    /SF
 
 ## Space Availability
 
-- **Total Available Space:** N/A
-- **Vacant Space:** 0 SF
+- **Direct Vacant Space:** 0 SF
+- **Sublet Vacant Space:** 0 SF
+- **Max Floor Contiguous:** 
+    
+- **Smallest Available:** 
+    
 - **Services:** 
+    
+- **Sublet Services:** 
     
 
 ## Building Features
@@ -55,9 +102,13 @@
 - **Elevators:** 0
 - **Ceiling Height:** 
     
+- **Column Spacing:** 
+    
 - **Loading Docks:** 
     
 - **Drive-In Doors:** 
+    
+- **Cranes:** 
     
 - **Power:** 
     
@@ -71,13 +122,48 @@
     
 - **Sewer:** 
     
+- **Rail Line:** 
+    
 - **Tenancy:** 
     
 - **Zoning:** RG-5
+- **Scale:** Independent
 
 ## Amenities
 
-Yard, Family Room, Porch, Balcony, Yard, Balcony
+Yard, Family Room, Porch, Balcony
+
+## Energy & Certifications
+
+- Energy Star: 
+    
+- LEED Certified: 
+    
+
+## Anchor Tenants
+
+
+    
+
+## FEMA & Flood Information
+
+- FEMA Map Date: 07/04/2011
+- FEMA Map ID: 25027C0618E
+- Firm ID: 25027C
+- Firm Panel: 0618E
+- In SFHA: No
+- Floodplain Area: 100-year and 500-year Floodplain
+- FEMA Flood Zone: Area of moderate flood hazard, usually the area between the limits of the 100-year and 500-year floods.
+- Flood Risk Area: Moderate to Low Risk Areas
+
+## Transit
+
+- **Transit Stop:** 
+    
+- **Crow Distance:** 
+     miles
+- **Walk Time:** 
+    
 
 ## Contact Information
 
@@ -86,7 +172,24 @@ Yard, Family Room, Porch, Balcony, Yard, Balcony
     
 - **Contact:** 
     
+- **Contact 2:** 
+    
 - **Phone:** 
+    
+- **Address:** 
+    
+- **City/State/Zip:** 
+    
+- **Fax:** 
+    
+
+### Sale
+- **Company:** Lornell Real Estate
+- **Contact:** Collin Mulcahy
+- **Phone:** 8603057432
+- **Address:** 22 Cherry St
+- **City/State/Zip:** Spencer, MA 01562
+- **Fax:** 
     
 
 ### Owner
@@ -96,10 +199,37 @@ Yard, Family Room, Porch, Balcony, Yard, Balcony
     
 - **Phone:** 
     
+- **Address:** 
+    
+- **City/State/Zip:** 
+    
 
-## Property ID
+### Property Manager
+- **Name:** 
+    
+- **Contact:** 
+    
+- **Phone:** 
+    
+- **Address:** 
+    
+- **City/State/Zip:** 
+    
 
-21512877
+
+## Additional Information
+
+- **Property ID:** 21512877
+- **Parcel Number:** WORC-000009-000006-000031
+- **Developer:** 
+    
+- **Architect:** 
+    
+- **Brand:** 
+    
+- **Institution:** Worcester Polytechnic Institute
+- **Building Park:** 
+    
 
 ---
-*Generated from PropertyDetails.xml*
+*Generated from PropertyDetails.xml - Complete data extraction*

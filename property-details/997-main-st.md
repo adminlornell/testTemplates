@@ -1,11 +1,18 @@
 # 997 Main St
 
+**Building Name:** 
+    
+
 ## Property Overview
 
 **Property Type:** Multifamily
 **Secondary Type:** Apartments
 **Status:** For Sale
 **Building Class:** B
+**Building Rating:** 3
+**Building Status:** Existing
+**Construction Status:** Existing
+**Condo Ownership:** No
 
 ## Location
 
@@ -16,34 +23,72 @@
 - **County:** Worcester
 - **Market:** Worcester, MA
 - **Submarket:** Outlying Worcester County
+- **Cluster:** Outlying Worcester County
+- **Cross Street:** 
+    
+- **Building Location:** 
+    
 - **Coordinates:** 42.2459734, -71.9052247
+- **Primary Corridors:** 
+    
 
 ## Building Details
 
 - **Building Size:** 3,504 SF
 - **Year Built:** 1950
+- **Month Built:** 
+    
 - **Year Renovated:** 
     
-- **Stories:** 3
+- **Month Renovated:** 
+    
 - **Typical Floor Size:** 1,168 SF
+- **Stories:** 3
 - **Land Area:** 0.29185 Acres (12,713 SF)
 - **Construction Type:** Masonry
+- **Construction Begin:** 
+    
+- **Collateral Type:** Single
 
 ## Financial Information
 
-- **Asking Price:** 500,000.00 - 1,500,000.00
 - **Rent Per SF:** Not Disclosed
-- **Occupancy Rate:** N/A
+- **Cap Rate:** 
+    %
 - **Tax Rate:** $1.5006/SF
 - **Annual Taxes:** $5,258
+- **Tax Year:** 2025
+- **Building Expenses:** 
+    
 - **Last Sale:** 
-     - Contact for Pricing
+     - None
+- **Days On Market:** 12
+- **Loan Amount:** $399,000
+- **Loan Type:** 
+    
+- **Interest Rate:** 
+     (
+    )
+- **Loan Origination:** 06/13/2025
+- **Originator:** Rbi Private Lending L
+- **Loan Maturity:** 
+    
+- **Operating Expenses:** 
+    
+- **Operating Expenses Per SF:** $
+    /SF
 
 ## Space Availability
 
-- **Total Available Space:** N/A
-- **Vacant Space:** 0 SF
+- **Direct Vacant Space:** 0 SF
+- **Sublet Vacant Space:** 0 SF
+- **Max Floor Contiguous:** 
+    
+- **Smallest Available:** 
+    
 - **Services:** 
+    
+- **Sublet Services:** 
     
 
 ## Building Features
@@ -53,9 +98,13 @@
 - **Elevators:** 0
 - **Ceiling Height:** 
     
+- **Column Spacing:** 
+    
 - **Loading Docks:** 
     
 - **Drive-In Doors:** 
+    
+- **Cranes:** 
     
 - **Power:** 
     
@@ -69,13 +118,46 @@
     
 - **Sewer:** 
     
+- **Rail Line:** 
+    
 - **Tenancy:** 
     
 - **Zoning:** R2
+- **Scale:** Independent
 
 ## Amenities
 
-24 Hour Access, Air Conditioning, Controlled Access, Tenant Controlled HVAC, Smoke Free, Smoke Free, Air Conditioning, Air Conditioning
+24 Hour Access, Air Conditioning, Controlled Access, Tenant Controlled HVAC, Smoke Free
+
+## Energy & Certifications
+
+- Energy Star: 
+    
+- LEED Certified: 
+    
+
+## Anchor Tenants
+
+
+    
+
+## FEMA & Flood Information
+
+- FEMA Map Date: 06/21/2023
+- FEMA Map ID: 25027C0782F
+- Firm ID: 25027C
+- Firm Panel: 0782F
+- In SFHA: No
+- Floodplain Area: 100-year and 500-year Floodplain
+- FEMA Flood Zone: Area of moderate flood hazard, usually the area between the limits of the 100-year and 500-year floods.
+- Flood Risk Area: Moderate to Low Risk Areas
+
+## Transit
+
+- **Transit Stop:** Worcester Regional
+- **Crow Distance:** 5.17 miles
+- **Walk Time:** 
+    
 
 ## Contact Information
 
@@ -84,7 +166,24 @@
     
 - **Contact:** 
     
+- **Contact 2:** 
+    
 - **Phone:** 
+    
+- **Address:** 
+    
+- **City/State/Zip:** 
+    
+- **Fax:** 
+    
+
+### Sale
+- **Company:** Lornell Real Estate
+- **Contact:** Collin Mulcahy
+- **Phone:** 8603057432
+- **Address:** 22 Cherry St
+- **City/State/Zip:** Spencer, MA 01562
+- **Fax:** 
     
 
 ### Owner
@@ -93,10 +192,36 @@
     
 - **Phone:** 
     
+- **Address:** 64 Dewey St
+- **City/State/Zip:** Worcester, MA 01610-1018
 
-## Property ID
+### Property Manager
+- **Name:** 
+    
+- **Contact:** 
+    
+- **Phone:** 
+    
+- **Address:** 
+    
+- **City/State/Zip:** 
+    
 
-20838009
+
+## Additional Information
+
+- **Property ID:** 20838009
+- **Parcel Number:** LEIC-000020CA000011
+- **Developer:** 
+    
+- **Architect:** 
+    
+- **Brand:** 
+    
+- **Institution:** 
+    
+- **Building Park:** 
+    
 
 ---
-*Generated from PropertyDetails.xml*
+*Generated from PropertyDetails.xml - Complete data extraction*
