@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Properties - Lornell Real Estate</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #4A4A4A;
+            --secondary-color: #FFFFFF;
+            --accent-color: #FF6B6B;
+            --black: #000000;
+            --dark-gray: #4A4A4A;
+            --medium-gray: #9B9B9B;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+            --red-primary: #B22222;
+            --red-dark: #8B1A1A;
+            
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Crimson Pro', serif;
+            
+            --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            color: var(--primary-color);
+            background-color: var(--white);
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #B22222, #8B1A1A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--red-primary);
+        }
+        
+        .cta-button {
+            background: var(--red-primary);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .cta-button:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(178, 34, 34, 0.3);
+        }
+        
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 0 3rem;
+            background: linear-gradient(135deg, rgba(178,34,34,0.05) 0%, rgba(255,255,255,0) 100%);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #B22222, #8B1A1A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .filters {
+            padding: 2rem 0;
+            background: var(--light-gray);
+        }
+        
+        .filter-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .filter-group {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .filter-group label {
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+        
+        .filter-group select {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: var(--font-primary);
+            background: var(--white);
+            color: var(--dark-gray);
+            cursor: pointer;
+        }
+        
+        .filter-group select:focus {
+            outline: none;
+            border-color: var(--red-primary);
+        }
+        
+        .properties-grid {
+            padding: 4rem 0;
+        }
+        
+        .properties-grid .container {
+            max-width: 1400px;
+        }
+        
+        #propertiesContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            align-items: start;
+        }
+        
+        @media (min-width: 1200px) {
+            #propertiesContainer {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (min-width: 1600px) {
+            #propertiesContainer {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .property-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            min-height: 100%;
+        }
+        
+        .property-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-card-hover);
+        }
+        
+        
+        .property-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--red-primary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+        
+        .property-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .property-header {
+            margin-bottom: 1rem;
+        }
+        
+        .property-address {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 0.25rem;
+        }
+        
+        .property-location {
+            color: var(--medium-gray);
+            font-size: 0.875rem;
+        }
+        
+        .property-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .property-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--medium-gray);
+        }
+        
+        .property-detail i {
+            color: var(--red-primary);
+        }
+        
+        .property-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--red-primary);
+            margin-top: auto;
+            margin-bottom: 0.5rem;
+        }
+        
+        .property-footer {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .property-type-badge {
+            background: linear-gradient(135deg, rgba(178,34,34,0.1), rgba(178,34,34,0.05));
+            color: var(--red-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .view-details {
+            color: var(--red-primary);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+        
+        .view-details:hover {
+            text-decoration: underline;
+        }
+        
+        .stats-bar {
+            background: var(--light-gray);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--red-primary);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--medium-gray);
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+        
+        footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            #propertiesContainer {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .filter-container {
+                flex-direction: column;
+            }
+            
+            .stats-container {
+                gap: 2rem;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            #propertiesContainer {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+        
+        @media (min-width: 1400px) {
+            #propertiesContainer {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+        }
+        
+        .property-image-container {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(178,34,34,0.1), rgba(178,34,34,0.05));
+        }
+        
+        .property-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .property-card:hover .property-image {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">Lornell Real Estate</a>
+                <nav class="nav-links">
+                    <a href="#properties">Properties</a>
+                    <a href="#about">About</a>
+                    <a href="#contact" class="cta-button">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Our Property Portfolio</h1>
+            <p>Explore our diverse collection of commercial real estate opportunities across Massachusetts and Rhode Island</p>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">20</span>
+                    <div class="stat-label">Total Properties</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <div class="stat-label">For Sale</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <div class="stat-label">For Lease</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="typeFilter">Type:</label>
+                    <select id="typeFilter" onchange="filterProperties()">
+                        <option value="all">All Types</option>
+                        <option value="Industrial">Industrial</option>
+                        <option value="Retail">Retail</option>
+                        <option value="Office">Office</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="statusFilter">Status:</label>
+                    <select id="statusFilter" onchange="filterProperties()">
+                        <option value="all">All Status</option>
+                        <option value="sale">For Sale</option>
+                        <option value="lease">For Lease</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="cityFilter">City:</label>
+                    <select id="cityFilter" onchange="filterProperties()">
+                        <option value="all">All Cities</option>
+                        <option value="Auburn">Auburn</option>
+                        <option value="Burrillville">Burrillville</option>
+                        <option value="Cambridge">Cambridge</option>
+                        <option value="Leicester">Leicester</option>
+                        <option value="Oxford">Oxford</option>
+                        <option value="Southbridge">Southbridge</option>
+                        <option value="Spencer">Spencer</option>
+                        <option value="Webster">Webster</option>
+                        <option value="Worcester">Worcester</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Grid -->
+    <section id="properties" class="properties-grid">
+        <div class="container">
+            <div id="propertiesContainer">
+                <a href="property-1003-main-st.html" class="property-card" data-type="Multifamily" data-status="sale" data-city="Leicester">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="1003 Main St" class="property-image">
+                        <div class="property-badge">FOR SALE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">1003 Main St</div>
+                            <div class="property-location">Leicester, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Multifamily</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>4.9K SF</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Multifamily</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-1155-victory-hwy.html" class="property-card" data-type="Industrial" data-status="sale" data-city="Burrillville">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&h=400&fit=crop" alt="1155 Victory Hwy" class="property-image">
+                        <div class="property-badge">FOR SALE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">1155 Victory Hwy</div>
+                            <div class="property-location">Burrillville, RI</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Industrial</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>10K SF</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-percentage"></i>
+                                <span>100.00% Leased</span>
+                            </div>
+                        </div>
+                        <div class="property-price">$1.80M</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Industrial</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-12-crane-st.html" class="property-card" data-type="Retail" data-status="lease" data-city="Southbridge">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="12 Crane St" class="property-image">
+                        <div class="property-badge">FOR LEASE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">12 Crane St</div>
+                            <div class="property-location">Southbridge, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Retail</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>26.4K SF</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-percentage"></i>
+                                <span>90.53% Leased</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Retail</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-133-main-st.html" class="property-card" data-type="Retail" data-status="lease" data-city="Spencer">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="133 Main St" class="property-image">
+                        <div class="property-badge">FOR LEASE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">133 Main St</div>
+                            <div class="property-location">Spencer, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Retail</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>53.1K SF</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-percentage"></i>
+                                <span>84.83% Leased</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Retail</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-15-crane-st.html" class="property-card" data-type="Retail" data-status="lease" data-city="Southbridge">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="15 Crane St" class="property-image">
+                        <div class="property-badge">FOR LEASE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">15 Crane St</div>
+                            <div class="property-location">Southbridge, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Retail</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>7.3K SF</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-percentage"></i>
+                                <span>94.55% Leased</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Retail</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-15-hamilton-st.html" class="property-card" data-type="Retail" data-status="lease" data-city="Southbridge">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="15 Hamilton St" class="property-image">
+                        <div class="property-badge">FOR LEASE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">15 Hamilton St</div>
+                            <div class="property-location">Southbridge, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Retail</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>7.8K SF</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-percentage"></i>
+                                <span>79.37% Leased</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Retail</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-21-pearl-st.html" class="property-card" data-type="Industrial" data-status="lease" data-city="Webster">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&h=400&fit=crop" alt="21 Pearl St" class="property-image">
+                        <div class="property-badge">FOR LEASE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">21 Pearl St</div>
+                            <div class="property-location">Webster, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Industrial</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>58K SF</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Industrial</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-21-69-s-main-st.html" class="property-card" data-type="Flex" data-status="sale" data-city="Leicester">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="21-69 S Main St" class="property-image">
+                        <div class="property-badge">FOR SALE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">21-69 S Main St</div>
+                            <div class="property-location">Leicester, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Flex</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>74.7K SF</span>
+                            </div>
+                        </div>
+                        <div class="property-price">$3.50M</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Flex</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-2323-2335-massachusetts-ave.html" class="property-card" data-type="Retail" data-status="lease" data-city="Cambridge">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="2323-2335 Massachusetts Ave" class="property-image">
+                        <div class="property-badge">FOR LEASE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">2323-2335 Massachusetts Ave</div>
+                            <div class="property-location">Cambridge, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Retail</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>12.5K SF</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-percentage"></i>
+                                <span>94.80% Leased</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Retail</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-253-255-main-st.html" class="property-card" data-type="Office" data-status="lease" data-city="Webster">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="253-255 Main St" class="property-image">
+                        <div class="property-badge">FOR LEASE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">253-255 Main St</div>
+                            <div class="property-location">Webster, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Office</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>19.4K SF</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-percentage"></i>
+                                <span>55.73% Leased</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Office</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-300-main-st.html" class="property-card" data-type="Retail" data-status="lease" data-city="Southbridge">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="300 Main St" class="property-image">
+                        <div class="property-badge">FOR LEASE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">300 Main St</div>
+                            <div class="property-location">Southbridge, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Retail</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>4.1K SF</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-percentage"></i>
+                                <span>100.00% Leased</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Retail</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-368-main-st.html" class="property-card" data-type="Office" data-status="lease" data-city="Southbridge">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="368 Main St" class="property-image">
+                        <div class="property-badge">FOR LEASE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">368 Main St</div>
+                            <div class="property-location">Southbridge, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Office</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>8.8K SF</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-percentage"></i>
+                                <span>53.53% Leased</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Office</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-415-main-st.html" class="property-card" data-type="Office" data-status="sale" data-city="Worcester">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="415 Main St" class="property-image">
+                        <div class="property-badge">FOR SALE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">415 Main St</div>
+                            <div class="property-location">Worcester, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Office</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>27.0K SF</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-percentage"></i>
+                                <span>87.06% Leased</span>
+                            </div>
+                        </div>
+                        <div class="property-price">$219K</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Office</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-606-southbridge-st.html" class="property-card" data-type="Retail" data-status="sale" data-city="Auburn">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="606 Southbridge St" class="property-image">
+                        <div class="property-badge">FOR SALE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">606 Southbridge St</div>
+                            <div class="property-location">Auburn, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Retail</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>3.2K SF</span>
+                            </div>
+                        </div>
+                        <div class="property-price">$1.20M</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Retail</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-7-sutton-ave.html" class="property-card" data-type="Retail" data-status="lease" data-city="Oxford">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="7 Sutton Ave" class="property-image">
+                        <div class="property-badge">FOR LEASE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">7 Sutton Ave</div>
+                            <div class="property-location">Oxford, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Retail</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>5.4K SF</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-percentage"></i>
+                                <span>100.00% Leased</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Retail</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-74-green-hill-pky.html" class="property-card" data-type="Multifamily" data-status="sale" data-city="Worcester">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="74 Green Hill Pky" class="property-image">
+                        <div class="property-badge">FOR SALE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">74 Green Hill Pky</div>
+                            <div class="property-location">Worcester, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Multifamily</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>3.6K SF</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Multifamily</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-78-green-hill-pky.html" class="property-card" data-type="Multifamily" data-status="sale" data-city="Worcester">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="78 Green Hill Pky" class="property-image">
+                        <div class="property-badge">FOR SALE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">78 Green Hill Pky</div>
+                            <div class="property-location">Worcester, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Multifamily</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>4.4K SF</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Multifamily</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-82-green-hill-pky.html" class="property-card" data-type="Multifamily" data-status="sale" data-city="Worcester">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="82 Green Hill Pky" class="property-image">
+                        <div class="property-badge">FOR SALE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">82 Green Hill Pky</div>
+                            <div class="property-location">Worcester, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Multifamily</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>4.8K SF</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Multifamily</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-993-main-st.html" class="property-card" data-type="Multifamily" data-status="sale" data-city="Leicester">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="993 Main St" class="property-image">
+                        <div class="property-badge">FOR SALE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">993 Main St</div>
+                            <div class="property-location">Leicester, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Multifamily</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>4.4K SF</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Multifamily</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-997-main-st.html" class="property-card" data-type="Multifamily" data-status="sale" data-city="Leicester">
+                    <div class="property-image-container">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="997 Main St" class="property-image">
+                        <div class="property-badge">FOR SALE</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-header">
+                            <div class="property-address">997 Main St</div>
+                            <div class="property-location">Leicester, MA</div>
+                        </div>
+                        <div class="property-details">
+                            <div class="property-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Multifamily</span>
+                            </div>
+                            <div class="property-detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>3.5K SF</span>
+                            </div>
+                        </div>
+                        <div class="property-price">Contact for Pricing</div>
+                        <div class="property-footer">
+                            <span class="property-type-badge">Multifamily</span>
+                            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <p>&copy; 2025 Lornell Real Estate. All rights reserved.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <p style="color: var(--medium-gray); font-size: 0.875rem; margin-top: 1rem;">
+                22 Cherry St, Spencer, MA 01562 | Licensed Real Estate Brokerage
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function filterProperties() {
+            const typeFilter = document.getElementById('typeFilter').value;
+            const statusFilter = document.getElementById('statusFilter').value;
+            const cityFilter = document.getElementById('cityFilter').value;
+            const cards = document.querySelectorAll('.property-card');
+            
+            cards.forEach(card => {
+                const cardType = card.getAttribute('data-type');
+                const cardStatus = card.getAttribute('data-status');
+                const cardCity = card.getAttribute('data-city');
+                
+                let show = true;
+                
+                if (typeFilter !== 'all' && cardType !== typeFilter) {
+                    show = false;
+                }
+                
+                if (statusFilter !== 'all' && cardStatus !== statusFilter) {
+                    show = false;
+                }
+                
+                if (cityFilter !== 'all' && cardCity !== cityFilter) {
+                    show = false;
+                }
+                
+                if (show) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Show message if no properties match
+            const visibleCards = Array.from(cards).filter(card => card.style.display !== 'none');
+            const container = document.getElementById('propertiesContainer');
+            let noResultsMsg = container.querySelector('.no-results-message');
+            
+            if (visibleCards.length === 0) {
+                if (!noResultsMsg) {
+                    noResultsMsg = document.createElement('p');
+                    noResultsMsg.className = 'no-results-message';
+                    noResultsMsg.style.cssText = 'grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--medium-gray); font-size: 1.125rem;';
+                    noResultsMsg.textContent = 'No properties match your filters. Please try different criteria.';
+                    container.appendChild(noResultsMsg);
+                }
+            } else {
+                if (noResultsMsg) {
+                    noResultsMsg.remove();
+                }
+            }
+        }
+    </script>
+</body>
+</html>

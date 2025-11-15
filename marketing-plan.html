@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Real Estate Marketing Plan - Lornell Real Estate</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #4A4A4A;
+            --secondary-color: #FFFFFF;
+            --accent-color: #FF6B6B;
+            --black: #000000;
+            --dark-gray: #4A4A4A;
+            --medium-gray: #9B9B9B;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+            --red-primary: #B22222;
+            --red-dark: #8B1A1A;
+            
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Crimson Pro', serif;
+            
+            --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            color: var(--primary-color);
+            background-color: var(--white);
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #B22222, #8B1A1A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--red-primary);
+        }
+        
+        .cta-button {
+            background: var(--red-primary);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .cta-button:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(178, 34, 34, 0.3);
+        }
+        
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 0 3rem;
+            background: linear-gradient(135deg, rgba(178,34,34,0.05) 0%, rgba(255,255,255,0) 100%);
+            text-align: center;
+            border-bottom: 3px solid var(--red-primary);
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #B22222, #8B1A1A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            font-weight: 400;
+        }
+        
+        .content {
+            padding: 3rem 0;
+        }
+        
+        .section {
+            margin-bottom: 4rem;
+        }
+        
+        .section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--red-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(178, 34, 34, 0.2);
+        }
+        
+        .section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .section p {
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+        
+        .section ul, .section ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.75rem;
+            color: var(--dark-gray);
+        }
+        
+        .section strong {
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+        
+        .cluster-card {
+            background: var(--light-gray);
+            border-left: 4px solid var(--red-primary);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+        
+        .cluster-card h4 {
+            color: var(--red-primary);
+            margin-top: 0;
+        }
+        
+        .persona-card {
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-card);
+        }
+        
+        .persona-card h4 {
+            color: var(--red-primary);
+            margin-top: 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(178,34,34,0.05), rgba(178,34,34,0.02));
+            border-left: 4px solid var(--red-primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .key-objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .objective-card {
+            background: var(--white);
+            border: 2px solid var(--red-primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .objective-card i {
+            font-size: 2rem;
+            color: var(--red-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .objective-card h4 {
+            color: var(--red-primary);
+            margin-top: 0;
+        }
+        
+        .roadmap-week {
+            background: var(--light-gray);
+            border-left: 4px solid var(--red-primary);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+        
+        .roadmap-week h4 {
+            color: var(--red-primary);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .roadmap-week ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .roadmap-week li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        
+        .roadmap-week li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--red-primary);
+            font-weight: bold;
+        }
+        
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .kpi-card {
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: var(--shadow-card);
+        }
+        
+        .kpi-card .kpi-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--red-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .kpi-card .kpi-label {
+            color: var(--medium-gray);
+            font-size: 0.875rem;
+        }
+        
+        .budget-box {
+            background: linear-gradient(135deg, rgba(178,34,34,0.1), rgba(178,34,34,0.05));
+            border: 2px solid var(--red-primary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .budget-box h4 {
+            color: var(--red-primary);
+            margin-top: 0;
+        }
+        
+        .code-block {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .toc {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+        
+        .toc h3 {
+            margin-top: 0;
+            color: var(--red-primary);
+        }
+        
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .toc a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .toc a:hover {
+            color: var(--red-primary);
+        }
+        
+        footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid rgba(178, 34, 34, 0.2);
+            margin: 3rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .key-objectives,
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--red-primary);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top:hover {
+            background: var(--red-dark);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">Lornell Real Estate</a>
+                <nav class="nav-links">
+                    <a href="index.html">Properties</a>
+                    <a href="#executive-summary">Plan</a>
+                    <a href="#contact" class="cta-button">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Comprehensive Real Estate Marketing Plan</h1>
+            <p class="subtitle">Lornell Real Estate Portfolio Marketing Strategy</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <div class="content">
+        <div class="container">
+            <!-- Executive Summary -->
+            <section id="executive-summary" class="section">
+                <h2>Executive Summary</h2>
+                <p>Based on analysis of your 20-property portfolio spanning Worcester County, Providence, and Cambridge markets, this marketing plan leverages your diverse property mix (Office, Industrial, Retail, Flex, and Multifamily) with total value exceeding $8.5M in active listings. The strategy targets three primary personas through hyper-personalized content across your website and LinkedIn channels.</p>
+                
+                <div class="key-objectives">
+                    <div class="objective-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h4>Position as Premier Broker</h4>
+                        <p>Establish Lornell Real Estate as the premier commercial real estate broker in Central Massachusetts</p>
+                    </div>
+                    <div class="objective-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Generate Qualified Leads</h4>
+                        <p>Drive qualified leads through data-driven content marketing</p>
+                    </div>
+                    <div class="objective-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>Build Thought Leadership</h4>
+                        <p>Establish expertise through market insights and property knowledge</p>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- Property & Market Analysis -->
+            <section id="property-analysis" class="section">
+                <h2>1. Property & Market Analysis</h2>
+                
+                <h3>Property Portfolio Clusters</h3>
+                <p>Based on your PropertyDetails.xml analysis, I've identified 5 distinct property clusters:</p>
+                
+                <div class="cluster-card">
+                    <h4>Cluster A: Value Investment Office Properties</h4>
+                    <p><strong>Properties:</strong> 415 Main St Worcester ($219K), 253-255 Main St Webster, 368 Main St</p>
+                    <p><strong>Total SF:</strong> ~55,000 SF</p>
+                    <p><strong>USP:</strong> Class B/C office spaces with 80-95% occupancy, ideal for cost-conscious businesses</p>
+                    <p><strong>Eminent Features:</strong></p>
+                    <ul>
+                        <li>Below-market pricing ($17-21/SF)</li>
+                        <li>Medical/biotech capabilities</li>
+                        <li>24-hour access with security systems</li>
+                        <li>Established tenant base (87% occupied average)</li>
+                    </ul>
+                </div>
+                
+                <div class="cluster-card">
+                    <h4>Cluster B: Industrial & Flex Powerhouses</h4>
+                    <p><strong>Properties:</strong> 1155 Victory Hwy Burrillville ($1.8M), 21 Pearl St, 21-69 S Main St Leicester ($3.5M)</p>
+                    <p><strong>Total SF:</strong> ~142,000 SF</p>
+                    <p><strong>USP:</strong> Large-scale industrial/flex spaces with excellent highway access</p>
+                    <p><strong>Eminent Features:</strong></p>
+                    <ul>
+                        <li>Loading docks (3+ per property)</li>
+                        <li>21' ceiling heights</li>
+                        <li>Triple-net leases available</li>
+                        <li>5.56% cap rate opportunities</li>
+                    </ul>
+                </div>
+                
+                <div class="cluster-card">
+                    <h4>Cluster C: Main Street Retail Gems</h4>
+                    <p><strong>Properties:</strong> Multiple Main St locations (Southbridge, Spencer, Oxford), 606 Southbridge St ($1.2M)</p>
+                    <p><strong>Total SF:</strong> ~97,000 SF</p>
+                    <p><strong>USP:</strong> High-visibility storefronts in established downtown corridors</p>
+                    <p><strong>Eminent Features:</strong></p>
+                    <ul>
+                        <li>Walk-in ready spaces (94% occupied)</li>
+                        <li>Mixed-use potential</li>
+                        <li>$20/SF average rent</li>
+                        <li>Strong local foot traffic</li>
+                    </ul>
+                </div>
+                
+                <div class="cluster-card">
+                    <h4>Cluster D: Cambridge Premium Location</h4>
+                    <p><strong>Properties:</strong> 2323-2335 Massachusetts Ave Cambridge</p>
+                    <p><strong>Total SF:</strong> 12,512 SF</p>
+                    <p><strong>USP:</strong> Class B retail in prestigious Cambridge/Tufts area</p>
+                    <p><strong>Eminent Features:</strong></p>
+                    <ul>
+                        <li>University proximity</li>
+                        <li>High-income demographics</li>
+                        <li>Premium location near tech corridor</li>
+                    </ul>
+                </div>
+                
+                <div class="cluster-card">
+                    <h4>Cluster E: Multifamily Investment Opportunities</h4>
+                    <p><strong>Properties:</strong> 30 Forest St Worcester, 2 Wayland St Oxford, 60 Oak St</p>
+                    <p><strong>Total Units:</strong> ~15 units</p>
+                    <p><strong>USP:</strong> Small multifamily properties perfect for first-time investors</p>
+                    <p><strong>Eminent Features:</strong></p>
+                    <ul>
+                        <li>Under $400K price points</li>
+                        <li>3-story walk-ups</li>
+                        <li>Value-add potential</li>
+                        <li>Owner-occupant eligible</li>
+                    </ul>
+                </div>
+                
+                <h3>Target Audience Personas</h3>
+                
+                <div class="persona-card">
+                    <h4>Persona A: "The Expansion Executive" (Industrial/Flex Focus)</h4>
+                    <ul>
+                        <li><strong>Demographics:</strong> 45-60 years, Business owners/C-suite</li>
+                        <li><strong>Company Size:</strong> $5M-50M revenue</li>
+                        <li><strong>Pain Points:</strong> Outgrowing current space, need loading/shipping capabilities</li>
+                        <li><strong>Desires:</strong> Scalable space, highway access, cost efficiency</li>
+                        <li><strong>Decision Factors:</strong> Cap rate, tenant improvements, lease flexibility</li>
+                    </ul>
+                </div>
+                
+                <div class="persona-card">
+                    <h4>Persona B: "The Local Entrepreneur" (Retail/Small Office Focus)</h4>
+                    <ul>
+                        <li><strong>Demographics:</strong> 30-50 years, Small business owners</li>
+                        <li><strong>Budget:</strong> $150K-500K purchase or $15-25/SF lease</li>
+                        <li><strong>Pain Points:</strong> High rent in metro areas, limited visibility</li>
+                        <li><strong>Desires:</strong> Main Street presence, affordable entry, community connection</li>
+                        <li><strong>Decision Factors:</strong> Foot traffic, parking, total occupancy cost</li>
+                    </ul>
+                </div>
+                
+                <div class="persona-card">
+                    <h4>Persona C: "The Portfolio Builder" (Investment/Multifamily Focus)</h4>
+                    <ul>
+                        <li><strong>Demographics:</strong> 35-65 years, Real estate investors</li>
+                        <li><strong>Portfolio Size:</strong> 2-20 properties</li>
+                        <li><strong>Pain Points:</strong> Finding value in competitive market, management complexity</li>
+                        <li><strong>Desires:</strong> Cash flow, appreciation potential, diversification</li>
+                        <li><strong>Decision Factors:</strong> NOI, cap rate, value-add opportunities</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- Hyper-Personalized Content Strategy -->
+            <section id="content-strategy" class="section">
+                <h2>2. Hyper-Personalized Content Strategy</h2>
+                
+                <h3>Core Messaging Framework</h3>
+                
+                <div class="highlight-box">
+                    <h4>For Expansion Executives:</h4>
+                    <p><strong>Headline:</strong> "Scale Your Operations Without Breaking the Bank"</p>
+                    <p><strong>Value Prop:</strong> Access 140,000+ SF of industrial/flex space with built-in infrastructure at 40% below Boston market rates.</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>For Local Entrepreneurs:</h4>
+                    <p><strong>Headline:</strong> "Your Main Street Success Story Starts Here"</p>
+                    <p><strong>Value Prop:</strong> Prime retail locations with established customer bases and community presence at sustainable price points.</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>For Portfolio Builders:</h4>
+                    <p><strong>Headline:</strong> "Hidden Gem Properties With Proven Returns"</p>
+                    <p><strong>Value Prop:</strong> Off-market and value-add opportunities delivering 5-8% cap rates in stable Central Mass markets.</p>
+                </div>
+                
+                <h3>Content Transformation Examples</h3>
+                
+                <h4>Blog Post: "The Leicester Flex Advantage"</h4>
+                <p><em>Target: Expansion Executives</em></p>
+                <p>Transform 21-69 S Main St features into benefits:</p>
+                <ul>
+                    <li>74,745 SF = "Room for 3 distinct operations under one roof"</li>
+                    <li>$3.5M price = "$47/SF - 60% less than Boston industrial"</li>
+                    <li>Highway access = "5 minutes to I-90, 45 minutes to Boston/Providence"</li>
+                    <li>Flex zoning = "Manufacturing today, distribution tomorrow"</li>
+                </ul>
+                
+                <h4>LinkedIn Post: "Southbridge Retail Renaissance"</h4>
+                <p><em>Target: Local Entrepreneurs</em></p>
+                <div class="code-block">
+🏪 Did you know Southbridge's Main Street maintains 94% occupancy despite pandemic challenges?
+
+Our 15 Crane St property showcases why:
+✓ $20/SF (vs. $35+ in Worcester city center)
+✓ 7,344 SF divisible to 400 SF
+✓ Established foot traffic from 6 anchor tenants
+✓ Historic charm meets modern amenities
+
+Perfect for boutiques, cafes, or professional services looking for authentic community presence.
+
+#CommercialRealEstate #SmallBusiness #SouthbridgeMA
+                </div>
+                
+                <h4>Website Feature: "Investment Calculator Tool"</h4>
+                <p><em>Target: Portfolio Builders</em></p>
+                <p>Interactive widget showcasing:</p>
+                <ul>
+                    <li>Real property data from portfolio (606 Southbridge St example)</li>
+                    <li>Input fields: Down payment, loan terms, renovation budget</li>
+                    <li>Outputs: Cash flow projection, ROI, cap rate comparison</li>
+                    <li>CTA: "See How This Property Fits Your Portfolio"</li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <!-- LinkedIn Channel Strategy -->
+            <section id="linkedin-strategy" class="section">
+                <h2>3. LinkedIn Channel Strategy</h2>
+                
+                <h3>LinkedIn Company Page Strategy</h3>
+                
+                <h4>Content Pillars (Weekly Rotation):</h4>
+                
+                <div class="persona-card">
+                    <h4>Monday: Market Intelligence</h4>
+                    <ul>
+                        <li>Worcester County absorption rates</li>
+                        <li>Comparative market analysis</li>
+                        <li>Industry trend reports</li>
+                        <li>Example: "Q1 2025: Worcester Office Occupancy Reaches 87% - What This Means for Tenants"</li>
+                    </ul>
+                </div>
+                
+                <div class="persona-card">
+                    <h4>Wednesday: Property Showcases</h4>
+                    <ul>
+                        <li>Virtual tour videos</li>
+                        <li>Feature carousels (10 slides max)</li>
+                        <li>Tenant success stories</li>
+                        <li>Example: Carousel of 1155 Victory Hwy with drone footage, loading dock demos, space configurations</li>
+                    </ul>
+                </div>
+                
+                <div class="persona-card">
+                    <h4>Friday: Resource Drops</h4>
+                    <ul>
+                        <li>Downloadable guides</li>
+                        <li>Market reports</li>
+                        <li>Financing calculators</li>
+                        <li>Example: "Free Download: Central Mass Industrial Site Selection Checklist"</li>
+                    </ul>
+                </div>
+                
+                <h4>Engagement Features:</h4>
+                <ul>
+                    <li>LinkedIn Polls: "What matters most in your next space? A) Price B) Location C) Flexibility D) Amenities"</li>
+                    <li>Event Announcements: Monthly property tours</li>
+                    <li>LinkedIn Live: Quarterly market updates with Q&A</li>
+                </ul>
+                
+                <h3>LinkedIn Personal Profile Strategy</h3>
+                
+                <h4>Thought Leadership Topics:</h4>
+                
+                <div class="roadmap-week">
+                    <h4>Week 1: Market Analysis</h4>
+                    <ul>
+                        <li>"Why Worcester is Outperforming Boston Suburbs"</li>
+                        <li>Data from portfolio: 87% occupancy vs. market average</li>
+                        <li>Tag: #CommercialRealEstate #WorcesterMA</li>
+                    </ul>
+                </div>
+                
+                <div class="roadmap-week">
+                    <h4>Week 2: Success Stories</h4>
+                    <ul>
+                        <li>"From Vacant to Vibrant: 415 Main St Transformation"</li>
+                        <li>Before/after visuals</li>
+                        <li>Tenant testimonials</li>
+                    </ul>
+                </div>
+                
+                <div class="roadmap-week">
+                    <h4>Week 3: Educational Content</h4>
+                    <ul>
+                        <li>"Understanding Triple-Net Leases in Industrial Properties"</li>
+                        <li>Use 1155 Victory Hwy as case study</li>
+                        <li>Include calculators/examples</li>
+                    </ul>
+                </div>
+                
+                <div class="roadmap-week">
+                    <h4>Week 4: Community Focus</h4>
+                    <ul>
+                        <li>"Supporting Local Business Growth in Spencer"</li>
+                        <li>Feature 133 Main St retail complex</li>
+                        <li>Partner testimonials</li>
+                    </ul>
+                </div>
+                
+                <h3>Lead Generation Tactics</h3>
+                
+                <div class="highlight-box">
+                    <h4>LinkedIn Lead Gen Form Campaign:</h4>
+                    <p><strong>Offer:</strong> "2025 Worcester County Commercial Real Estate Investment Guide"</p>
+                    <p><strong>Contents:</strong></p>
+                    <ul>
+                        <li>All 20 properties with detailed analysis</li>
+                        <li>Cap rate comparisons</li>
+                        <li>Financing options</li>
+                        <li>Market projections</li>
+                    </ul>
+                    <p><strong>Form Fields:</strong> Name, Company, Email, Property Type Interest, Timeline, Investment Range</p>
+                    <p><strong>Follow-up Sequence:</strong></p>
+                    <ol>
+                        <li>Instant: Guide delivery + personal video message</li>
+                        <li>Day 3: Relevant property matches based on interest</li>
+                        <li>Day 7: Invitation to private property tour</li>
+                        <li>Day 14: Market update + consultation offer</li>
+                    </ol>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- Website Optimization Strategy -->
+            <section id="website-strategy" class="section">
+                <h2>4. Website Optimization Strategy</h2>
+                
+                <h3>SEO & Content Architecture</h3>
+                
+                <h4>Primary Landing Pages:</h4>
+                
+                <div class="persona-card">
+                    <h4>"/worcester-office-space"</h4>
+                    <ul>
+                        <li>Target: "office space Worcester MA"</li>
+                        <li>Feature: 415 Main St, 253-255 Main St</li>
+                        <li>Content: 2,000-word guide on Worcester office market</li>
+                        <li>Schema: LocalBusiness + RealEstateListing</li>
+                    </ul>
+                </div>
+                
+                <div class="persona-card">
+                    <h4>"/industrial-flex-space-central-mass"</h4>
+                    <ul>
+                        <li>Target: "industrial space for lease Massachusetts"</li>
+                        <li>Feature: Leicester flex, Burrillville industrial</li>
+                        <li>Content: Comparison tool, loading dock calculator</li>
+                        <li>Schema: Product + Offer</li>
+                    </ul>
+                </div>
+                
+                <div class="persona-card">
+                    <h4>"/retail-space-main-street"</h4>
+                    <ul>
+                        <li>Target: "retail space for rent Southbridge"</li>
+                        <li>Feature: All Main Street properties</li>
+                        <li>Content: Foot traffic data, demographic analysis</li>
+                        <li>Schema: Place + LocalBusiness</li>
+                    </ul>
+                </div>
+                
+                <h4>Blog Content Calendar:</h4>
+                
+                <div class="roadmap-week">
+                    <h4>Month 1:</h4>
+                    <ul>
+                        <li>"Complete Guide to Worcester Commercial Real Estate 2025"</li>
+                        <li>"Industrial Space Sizing: How Much Do You Really Need?"</li>
+                        <li>"Main Street vs. Mall: Retail Location Analysis"</li>
+                        <li>"Understanding Cap Rates: Worcester County Deep Dive"</li>
+                    </ul>
+                </div>
+                
+                <div class="roadmap-week">
+                    <h4>Month 2:</h4>
+                    <ul>
+                        <li>"Leicester's Industrial Growth: Opportunities and Insights"</li>
+                        <li>"Small Business Success: Choosing Your First Commercial Space"</li>
+                        <li>"Tax Advantages of Owner-Occupied Commercial Property"</li>
+                        <li>"Cambridge vs. Worcester: Commercial Real Estate Comparison"</li>
+                    </ul>
+                </div>
+                
+                <h3>User Experience Optimization</h3>
+                
+                <h4>Homepage Hero Section:</h4>
+                <div class="code-block">
+Headline: "Find Your Perfect Commercial Space in Central Massachusetts"
+Subhead: "20 Properties | 4 Property Types | 3 Major Markets"
+
+[Property Type Selector]
+□ Office □ Industrial □ Retail □ Flex □ Investment
+
+[Budget Range Slider]
+$150K -------------------- $3.5M
+
+[Search Button] [View All Properties]
+                </div>
+                
+                <h4>Persona-Based Navigation:</h4>
+                <div class="code-block">
+For Business Owners > 
+- Available Spaces
+- Lease vs. Buy Calculator
+- Schedule Tour
+
+For Investors >
+- Investment Properties
+- Cap Rate Analysis
+- Portfolio Builder
+
+For Tenants >
+- Available Leases
+- Tenant Resources
+- Application Process
+                </div>
+                
+                <h3>Lead Capture Mechanisms</h3>
+                
+                <div class="highlight-box">
+                    <h4>Primary: Interactive Property Match Quiz</h4>
+                    <p>"Find Your Ideal Commercial Property in 60 Seconds"</p>
+                    <p><strong>Questions:</strong></p>
+                    <ol>
+                        <li>Property Type Needed?</li>
+                        <li>Square Footage Range?</li>
+                        <li>Budget/Rent Range?</li>
+                        <li>Location Preference?</li>
+                        <li>Timeline?</li>
+                    </ol>
+                    <p><strong>Result:</strong> Personalized property recommendations + consultation offer</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Secondary: Market Report Opt-in</h4>
+                    <p>"Get Monthly Worcester County Commercial Real Estate Reports"</p>
+                    <p><strong>Popup Trigger:</strong> 30 seconds on property page</p>
+                    <p><strong>Offer:</strong> Exclusive market data, new listings, price changes</p>
+                    <p><strong>Fields:</strong> Email only (progressive profiling for more)</p>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- Implementation Roadmap -->
+            <section id="roadmap" class="section">
+                <h2>5. Actionable 4-Week Implementation Roadmap</h2>
+                
+                <div class="roadmap-week">
+                    <h4>Week 1: Setup & Persona Finalization</h4>
+                    <p><strong>Monday-Tuesday:</strong></p>
+                    <ul>
+                        <li>Finalize brand assets (logo, colors, templates)</li>
+                        <li>Set up LinkedIn Company Page with complete profile</li>
+                        <li>Create content templates for each persona</li>
+                        <li>Install Google Analytics 4 and Tag Manager</li>
+                    </ul>
+                    <p><strong>Wednesday-Thursday:</strong></p>
+                    <ul>
+                        <li>Build persona documentation with team</li>
+                        <li>Create content style guide</li>
+                        <li>Set up CRM segments for three personas</li>
+                        <li>Design email templates for each persona</li>
+                    </ul>
+                    <p><strong>Friday:</strong></p>
+                    <ul>
+                        <li>Team training on persona messaging</li>
+                        <li>Content calendar finalization</li>
+                        <li>Competitive analysis of 5 local competitors</li>
+                        <li>Week 1 performance baseline metrics</li>
+                    </ul>
+                </div>
+                
+                <div class="roadmap-week">
+                    <h4>Week 2: Website & SEO Quick Wins</h4>
+                    <p><strong>Monday-Tuesday:</strong></p>
+                    <ul>
+                        <li>Create 3 primary landing pages (office, industrial, retail)</li>
+                        <li>Optimize all 20 property listings with schema markup</li>
+                        <li>Install property match quiz on homepage</li>
+                        <li>Set up Google My Business for all locations</li>
+                    </ul>
+                    <p><strong>Wednesday-Thursday:</strong></p>
+                    <ul>
+                        <li>Write and publish 2 cornerstone blog posts</li>
+                        <li>Create XML sitemap and submit to Google</li>
+                        <li>Implement internal linking strategy</li>
+                        <li>Add property comparison tool</li>
+                    </ul>
+                    <p><strong>Friday:</strong></p>
+                    <ul>
+                        <li>Technical SEO audit and fixes</li>
+                        <li>Page speed optimization</li>
+                        <li>Mobile responsiveness check</li>
+                        <li>Set up Search Console monitoring</li>
+                    </ul>
+                </div>
+                
+                <div class="roadmap-week">
+                    <h4>Week 3: LinkedIn Content Launch</h4>
+                    <p><strong>Monday:</strong></p>
+                    <ul>
+                        <li>Publish first LinkedIn Company showcase</li>
+                        <li>Personal profile optimization</li>
+                        <li>Connect with 50 target prospects</li>
+                        <li>Join 5 relevant LinkedIn groups</li>
+                    </ul>
+                    <p><strong>Tuesday-Wednesday:</strong></p>
+                    <ul>
+                        <li>Create and schedule Week 1 content</li>
+                        <li>Design carousel templates</li>
+                        <li>Record property video tours</li>
+                        <li>Build LinkedIn Lead Gen form</li>
+                    </ul>
+                    <p><strong>Thursday-Friday:</strong></p>
+                    <ul>
+                        <li>Launch lead generation campaign</li>
+                        <li>Publish thought leadership article</li>
+                        <li>Engage with 20 industry posts</li>
+                        <li>Schedule Week 2 content</li>
+                    </ul>
+                </div>
+                
+                <div class="roadmap-week">
+                    <h4>Week 4: Lead Generation & Analysis</h4>
+                    <p><strong>Monday-Tuesday:</strong></p>
+                    <ul>
+                        <li>Activate website lead capture forms</li>
+                        <li>Launch email nurture sequences</li>
+                        <li>Create retargeting pixel audiences</li>
+                        <li>Design downloadable investment guide</li>
+                    </ul>
+                    <p><strong>Wednesday-Thursday:</strong></p>
+                    <ul>
+                        <li>Host first LinkedIn Live session</li>
+                        <li>Send first market report email</li>
+                        <li>Personal outreach to 20 qualified leads</li>
+                        <li>A/B test landing page headlines</li>
+                    </ul>
+                    <p><strong>Friday:</strong></p>
+                    <ul>
+                        <li>Week 4 performance review</li>
+                        <li>ROI analysis of all channels</li>
+                        <li>Lead quality assessment</li>
+                        <li>Month 2 strategy adjustments</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- KPIs -->
+            <section id="kpis" class="section">
+                <h2>Key Performance Indicators (KPIs)</h2>
+                
+                <h3>Website Metrics:</h3>
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-number">50%</div>
+                        <div class="kpi-label">Organic Traffic Growth (Month 1 Target)</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-number">3-5%</div>
+                        <div class="kpi-label">Lead Conversion Rate Target</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-number">3+ min</div>
+                        <div class="kpi-label">Average Session Duration Target</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-number">10%</div>
+                        <div class="kpi-label">Property Inquiry Rate Target</div>
+                    </div>
+                </div>
+                
+                <h3>LinkedIn Metrics:</h3>
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-number">500</div>
+                        <div class="kpi-label">Company Page Followers (Month 1)</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-number">5-7%</div>
+                        <div class="kpi-label">Engagement Rate Target</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-number">50</div>
+                        <div class="kpi-label">Lead Form Submissions Target</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-number">10K</div>
+                        <div class="kpi-label">Content Impressions Monthly</div>
+                    </div>
+                </div>
+                
+                <h3>Business Metrics:</h3>
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-number">100</div>
+                        <div class="kpi-label">Qualified Leads (Month 1)</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-number">20</div>
+                        <div class="kpi-label">Property Showings Scheduled</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-number">5</div>
+                        <div class="kpi-label">LOIs/Offers Received</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-number">1-2</div>
+                        <div class="kpi-label">Deals Closed Target</div>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- Budget -->
+            <section id="budget" class="section">
+                <h2>Budget Allocation Recommendations</h2>
+                
+                <div class="budget-box">
+                    <h4>Month 1 Investment: $5,000</h4>
+                    <ul>
+                        <li>LinkedIn advertising: $2,000</li>
+                        <li>Content creation/video: $1,500</li>
+                        <li>Website updates: $1,000</li>
+                        <li>Tools/software: $500</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 1.5rem;">Expected ROI:</h4>
+                    <ul>
+                        <li>Based on average commission of 3% on $1M transaction = $30,000</li>
+                        <li>Target: 1 closed deal Month 1 = 600% ROI</li>
+                        <li>Pipeline value: $500K+ in qualified opportunities</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- Conclusion -->
+            <section id="conclusion" class="section">
+                <h2>Conclusion & Next Steps</h2>
+                
+                <p>This comprehensive marketing plan leverages your diverse 20-property portfolio to create a dominant presence in the Central Massachusetts commercial real estate market. By targeting three distinct personas with hyper-personalized content and strategic channel deployment, Lornell Real Estate can establish itself as the go-to resource for commercial property needs.</p>
+                
+                <div class="highlight-box">
+                    <h4>Immediate Actions:</h4>
+                    <ol>
+                        <li>Review and approve persona definitions</li>
+                        <li>Prioritize Week 1 setup tasks</li>
+                        <li>Allocate team responsibilities</li>
+                        <li>Set up tracking systems</li>
+                        <li>Schedule weekly progress reviews</li>
+                    </ol>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Success Factors:</h4>
+                    <ul>
+                        <li>Consistent content publication</li>
+                        <li>Data-driven optimization</li>
+                        <li>Persona-specific messaging</li>
+                        <li>Multi-channel integration</li>
+                        <li>Rapid response to leads</li>
+                    </ul>
+                </div>
+                
+                <p style="margin-top: 2rem; font-style: italic; color: var(--medium-gray);">Transform your property data into powerful marketing that drives real results. Your comprehensive PropertyDetails.xml file provides the foundation - now execute this plan to capture the market opportunity.</p>
+            </section>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <p>&copy; 2025 Lornell Real Estate. All rights reserved.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <p style="color: var(--medium-gray); font-size: 0.875rem; margin-top: 1rem;">
+                22 Cherry St, Spencer, MA 01562 | Licensed Real Estate Brokerage
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
+
+

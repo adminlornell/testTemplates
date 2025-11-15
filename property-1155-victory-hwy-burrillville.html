@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1155 Victory Hwy, Burrillville - Industrial Investment Opportunity | Lornell Real Estate</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #4A4A4A;
+            --secondary-color: #FFFFFF;
+            --accent-color: #FF6B6B;
+            --black: #000000;
+            --dark-gray: #4A4A4A;
+            --medium-gray: #9B9B9B;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+            --red-primary: #B22222;
+            --red-dark: #8B1A1A;
+            
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Crimson Pro', serif;
+            
+            --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            color: var(--primary-color);
+            background-color: var(--white);
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #B22222, #8B1A1A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--red-primary);
+        }
+        
+        .cta-button {
+            background: var(--red-primary);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .cta-button:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(178, 34, 34, 0.3);
+        }
+        
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 0 2rem;
+            background: linear-gradient(135deg, rgba(178,34,34,0.05) 0%, rgba(255,255,255,0) 100%);
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #B22222, #8B1A1A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .property-meta {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--medium-gray);
+        }
+        
+        .meta-item i {
+            color: var(--red-primary);
+        }
+        
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--red-primary);
+            margin: 2rem 0;
+        }
+        
+        .hero-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-image:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-card-hover);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--red-primary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        .highlight-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: var(--dark-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        .features {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #B22222, #8B1A1A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-card-hover);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(178,34,34,0.1), rgba(178,34,34,0.2));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: var(--red-primary);
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
+        
+        .feature-card p {
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+        
+        .cap-rate-highlight {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+        
+        .details {
+            padding: 4rem 0;
+            background: var(--light-gray);
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        
+        .detail-section {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-card);
+        }
+        
+        .detail-section h2 {
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+            font-size: 1.75rem;
+        }
+        
+        .detail-list {
+            list-style: none;
+        }
+        
+        .detail-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .detail-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-label {
+            color: var(--medium-gray);
+            font-weight: 500;
+        }
+        
+        .detail-value {
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+        
+        .amenities-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .amenity-tag {
+            background: linear-gradient(135deg, rgba(178,34,34,0.1), rgba(178,34,34,0.05));
+            color: var(--red-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .contact {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, rgba(178,34,34,0.03) 0%, rgba(255,255,255,0) 100%);
+        }
+        
+        .contact-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-card);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .agent-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .agent-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #B22222, #8B1A1A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2rem;
+        }
+        
+        .agent-details h3 {
+            margin-bottom: 0.25rem;
+        }
+        
+        .agent-details p {
+            color: var(--medium-gray);
+        }
+        
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .btn-secondary {
+            background: var(--white);
+            color: var(--red-primary);
+            border: 1px solid var(--red-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--light-gray);
+        }
+        
+        footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Lornell Real Estate</div>
+                <nav class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#details">Details</a>
+                    <a href="#financials">Financials</a>
+                    <a href="#contact" class="cta-button">Schedule Viewing</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animate-fade-in">
+                <div class="hero-text">
+                    <h1>1155 Victory Highway</h1>
+                    <p style="font-size: 1.25rem; color: var(--medium-gray); margin-bottom: 1.5rem;">
+                        100% leased industrial investment property with outstanding 5.56% cap rate. This 10,000 SF metal building on Route 102 offers stable income and growth potential in Rhode Island's emerging industrial corridor.
+                    </p>
+                    
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-industry"></i>
+                            <span>Industrial</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-ruler-combined"></i>
+                            <span>10,000 SF</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Burrillville, RI</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>5.56% Cap Rate</span>
+                        </div>
+                    </div>
+                    
+                    <div class="price-tag">$1,800,000</div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#contact" class="cta-button">
+                            <i class="fas fa-calendar-check"></i> Schedule Tour
+                        </a>
+                        <a href="#financials" class="btn-secondary">
+                            <i class="fas fa-calculator"></i> View Financials
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="highlight-badge">100% LEASED</div>
+                    <div class="badge">INVESTMENT</div>
+                    <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&h=400&fit=crop" alt="1155 Victory Highway Industrial Property">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Investment Highlights</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Strong Cap Rate</h3>
+                    <p>Exceptional 5.56% capitalization rate significantly above market average</p>
+                    <span class="cap-rate-highlight">5.56% CAP</span>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Fully Occupied</h3>
+                    <p>100% leased with established tenant providing stable cash flow from day one</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Triple Net Lease</h3>
+                    <p>Tenant responsible for taxes, insurance, and maintenance - minimal landlord obligations</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Loading Capacity</h3>
+                    <p>3 loading docks and 1 drive-in door for efficient logistics operations</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-ruler-vertical"></i>
+                    </div>
+                    <h3>21' Ceilings</h3>
+                    <p>Clear height of 21 feet allows for vertical storage and efficient space utilization</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <h3>Ample Parking</h3>
+                    <p>27 parking spaces (2.7 per 1,000 SF) exceeds industrial standards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Details -->
+    <section id="details" class="details">
+        <div class="container">
+            <div class="details-grid">
+                <div class="detail-section">
+                    <h2>Property Specifications</h2>
+                    <ul class="detail-list">
+                        <li>
+                            <span class="detail-label">Property Type</span>
+                            <span class="detail-value">Industrial</span>
+                        </li>
+                        <li>
+                            <span class="detail-label">Building Size</span>
+                            <span class="detail-value">10,000 SF</span>
+                        </li>
+                        <li>
+                            <span class="detail-label">Year Built</span>
+                            <span class="detail-value">1987</span>
+                        </li>
+                        <li>
+                            <span class="detail-label">Construction Type</span>
+                            <span class="detail-value">Metal Building</span>
+                        </li>
+                        <li>
+                            <span class="detail-label">Land Area</span>
+                            <span class="detail-value">0.45 Acres (19,602 SF)</span>
+                        </li>
+                        <li>
+                            <span class="detail-label">Ceiling Height</span>
+                            <span class="detail-value">21 Feet Clear</span>
+                        </li>
+                        <li>
+                            <span class="detail-label">Loading</span>
+                            <span class="detail-value">3 Docks + 1 Drive-In</span>
+                        </li>
+                        <li>
+                            <span class="detail-label">Power</span>
+                            <span class="detail-value">Heavy Industrial</span>
+                        </li>
+                    </ul>
+                    
+                    <h2 style="margin-top: 2rem;">Building Features</h2>
+                    <div class="amenities-list">
+                        <span class="amenity-tag">Air Conditioning</span>
+                        <span class="amenity-tag">Security System</span>
+                        <span class="amenity-tag">Signage Rights</span>
+                        <span class="amenity-tag">Skylights</span>
+                        <span class="amenity-tag">Gas Heating</span>
+                        <span class="amenity-tag">Propane Available</span>
+                        <span class="amenity-tag">City Water</span>
+                        <span class="amenity-tag">Sprinkler System</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="detail-section" id="financials">
+                        <h2>Investment Analysis</h2>
+                        <ul class="detail-list">
+                            <li>
+                                <span class="detail-label">List Price</span>
+                                <span class="detail-value">$1,800,000</span>
+                            </li>
+                            <li>
+                                <span class="detail-label">Price/SF</span>
+                                <span class="detail-value">$180/SF</span>
+                            </li>
+                            <li>
+                                <span class="detail-label">Cap Rate</span>
+                                <span class="detail-value" style="color: #4CAF50; font-weight: 700;">5.56%</span>
+                            </li>
+                            <li>
+                                <span class="detail-label">Occupancy</span>
+                                <span class="detail-value">100%</span>
+                            </li>
+                            <li>
+                                <span class="detail-label">Lease Type</span>
+                                <span class="detail-value">Triple Net</span>
+                            </li>
+                            <li>
+                                <span class="detail-label">Est. NOI</span>
+                                <span class="detail-value">$100,080/year</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section" style="margin-top: 2rem;">
+                        <h2>Location Advantages</h2>
+                        <ul class="detail-list">
+                            <li>
+                                <span class="detail-label">Highway Access</span>
+                                <span class="detail-value">Direct Route 102</span>
+                            </li>
+                            <li>
+                                <span class="detail-label">To Providence</span>
+                                <span class="detail-value">25 minutes</span>
+                            </li>
+                            <li>
+                                <span class="detail-label">To Worcester</span>
+                                <span class="detail-value">35 minutes</span>
+                            </li>
+                            <li>
+                                <span class="detail-label">To Boston</span>
+                                <span class="detail-value">60 minutes</span>
+                            </li>
+                            <li>
+                                <span class="detail-label">Market</span>
+                                <span class="detail-value">Burrillville/Glocester</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Secure This Investment Opportunity</h2>
+            <div class="contact-card">
+                <div class="agent-info">
+                    <div class="agent-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="agent-details">
+                        <h3>Collin Mulcahy</h3>
+                        <p>Commercial Investment Specialist</p>
+                        <p style="color: var(--red-primary); font-weight: 600;">
+                            <i class="fas fa-phone"></i> 774-230-3634
+                        </p>
+                    </div>
+                </div>
+                
+                <p style="color: var(--medium-gray); margin-bottom: 2rem;">
+                    With a 5.56% cap rate and 100% occupancy, this industrial investment opportunity represents exceptional value in today's market. Contact us for complete financials and to arrange your property tour.
+                </p>
+                
+                <div class="contact-buttons">
+                    <a href="tel:774-230-3634" class="cta-button">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                    <a href="mailto:info@lornellrealestate.com" class="btn-secondary">
+                        <i class="fas fa-envelope"></i> Request OM
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        <i class="fas fa-file-pdf"></i> Download Brochure
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <p>&copy; 2025 Lornell Real Estate. All rights reserved.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <p style="color: var(--medium-gray); font-size: 0.875rem; margin-top: 1rem;">
+                22 Cherry St, Spencer, MA 01562 | Licensed Real Estate Brokerage
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
