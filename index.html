@@ -116,6 +116,19 @@
             text-align: center;
         }
         
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .hero-animation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
         .hero h1 {
             font-size: 3rem;
             font-weight: 700;
@@ -130,6 +143,13 @@
             color: var(--medium-gray);
             max-width: 600px;
             margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-content {
+                flex-direction: row;
+                justify-content: space-around;
+            }
         }
         
         .filters {
@@ -441,8 +461,15 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Our Property Portfolio</h1>
-            <p>Explore our diverse collection of commercial real estate opportunities across Massachusetts and Rhode Island</p>
+            <div class="hero-content">
+                <div>
+                    <h1>Our Property Portfolio</h1>
+                    <p>Explore our diverse collection of commercial real estate opportunities across Massachusetts and Rhode Island</p>
+                </div>
+                <div class="hero-animation">
+                    <div id="path-morphing-container"></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1169,6 +1196,25 @@
                     noResultsMsg.remove();
                 }
             }
+        }
+    </script>
+    
+    <!-- Flubber Library for Path Morphing -->
+    <script src="https://cdn.jsdelivr.net/npm/flubber@0.4.2/build/flubber.min.js"></script>
+    
+    <!-- Path Morphing Animation -->
+    <script src="js/path-morphing.js"></script>
+    
+    <script>
+        // Initialize path morphing animation
+        if (typeof flubber !== 'undefined' && typeof PathMorphing !== 'undefined') {
+            window.pathMorphing = new PathMorphing('path-morphing-container', {
+                width: 300,
+                height: 300,
+                colors: ['#B22222', '#8B1A1A'],
+                duration: 800,
+                pauseBetween: 200
+            });
         }
     </script>
 </body>

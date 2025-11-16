@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path Morphing Animation - Lornell Real Estate</title>
+    <style>
+        :root {
+            --red-primary: #B22222;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .animation-container {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: var(--red-primary);
+            margin-bottom: 2rem;
+        }
+        
+        svg {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="animation-container">
+        <h1>Lornell Real Estate</h1>
+        <svg width="400" height="400" id="morphing-svg">
+            <g transform="translate(10 10) scale(17 17)">
+                <path id="morphing-path" fill="#B22222" />
+            </g>
+        </svg>
+    </div>
+
+    <!-- Load flubber from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/flubber@0.4.2/build/flubber.min.js"></script>
+    
+    <script>
+        // Shape paths
+        const star = "M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z";
+        const heart = "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z";
+        const hand = "M23 5.5V20c0 2.2-1.8 4-4 4h-7.3c-1.08 0-2.1-.43-2.85-1.19L1 14.83s1.26-1.23 1.3-1.25c.22-.19.49-.29.79-.29.22 0 .42.06.6.16.04.01 4.31 2.46 4.31 2.46V4c0-.83.67-1.5 1.5-1.5S11 3.17 11 4v7h1V1.5c0-.83.67-1.5 1.5-1.5S15 .67 15 1.5V11h1V2.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V11h1V5.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5z";
+        const plane = "M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z";
+        const lightning = "M7 2v11h3v9l7-12h-4l4-8z";
+        const note = "M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z";
+        
+        const paths = [lightning, hand, plane, heart, note, star, lightning];
+        const colors = [
+            "#fff312",
+            "#ff0088",
+            "#dd00ee",
+            "#9911ff",
+            "#0d63f8",
+            "#0cdcf7",
+            "#4ff0b7"
+        ];
+        
+        // Use Lornell brand colors instead
+        const brandColors = [
+            "#B22222", // Red primary
+            "#8B1A1A", // Red dark
+            "#B22222",
+            "#8B1A1A",
+            "#B22222",
+            "#8B1A1A",
+            "#B22222"
+        ];
+        
+        let currentPathIndex = 0;
+        let animationId = null;
+        let progress = 0;
+        let isAnimating = false;
+        
+        const pathElement = document.getElementById('morphing-path');
+        
+        // Easing function
+        function easeInOut(t) {
+            return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        }
+        
+        // Animate between two paths
+        function animatePath(fromPath, toPath, duration = 800) {
+            if (isAnimating) return;
+            isAnimating = true;
+            
+            const startTime = performance.now();
+            const interpolator = flubber.interpolate(fromPath, toPath, {
+                maxSegmentLength: 0.1
+            });
+            
+            function animate(currentTime) {
+                const elapsed = currentTime - startTime;
+                const t = Math.min(elapsed / duration, 1);
+                const easedT = easeInOut(t);
+                
+                const currentPath = interpolator(easedT);
+                pathElement.setAttribute('d', currentPath);
+                
+                if (t < 1) {
+                    animationId = requestAnimationFrame(animate);
+                } else {
+                    isAnimating = false;
+                    // Move to next path
+                    currentPathIndex = (currentPathIndex + 1) % paths.length;
+                    if (currentPathIndex === 0) {
+                        // Loop back to start
+                        currentPathIndex = 1;
+                    }
+                    setTimeout(() => {
+                        animatePath(paths[currentPathIndex - 1], paths[currentPathIndex]);
+                    }, 200);
+                }
+            }
+            
+            animationId = requestAnimationFrame(animate);
+        }
+        
+        // Initialize
+        pathElement.setAttribute('d', paths[0]);
+            pathElement.setAttribute('fill', brandColors[0]);
+        
+        // Start animation after a short delay
+        setTimeout(() => {
+            animatePath(paths[0], paths[1]);
+        }, 500);
+        
+        // Update color as path changes
+        function updateColor() {
+            const colorIndex = currentPathIndex % brandColors.length;
+            pathElement.setAttribute('fill', brandColors[colorIndex]);
+        }
+        
+        // Enhanced version with color transitions
+        function animatePathWithColor(fromPath, toPath, fromColor, toColor, duration = 800) {
+            if (isAnimating) return;
+            isAnimating = true;
+            
+            const startTime = performance.now();
+            const interpolator = flubber.interpolate(fromPath, toPath, {
+                maxSegmentLength: 0.1
+            });
+            
+            // Color interpolation helper
+            function hexToRgb(hex) {
+                const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                return result ? {
+                    r: parseInt(result[1], 16),
+                    g: parseInt(result[2], 16),
+                    b: parseInt(result[3], 16)
+                } : null;
+            }
+            
+            function rgbToHex(r, g, b) {
+                return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+            }
+            
+            function interpolateColor(color1, color2, t) {
+                const rgb1 = hexToRgb(color1);
+                const rgb2 = hexToRgb(color2);
+                const r = Math.round(rgb1.r + (rgb2.r - rgb1.r) * t);
+                const g = Math.round(rgb1.g + (rgb2.g - rgb1.g) * t);
+                const b = Math.round(rgb1.b + (rgb2.b - rgb1.b) * t);
+                return rgbToHex(r, g, b);
+            }
+            
+            function animate(currentTime) {
+                const elapsed = currentTime - startTime;
+                const t = Math.min(elapsed / duration, 1);
+                const easedT = easeInOut(t);
+                
+                // Interpolate path
+                const currentPath = interpolator(easedT);
+                pathElement.setAttribute('d', currentPath);
+                
+                // Interpolate color
+                const currentColor = interpolateColor(fromColor, toColor, easedT);
+                pathElement.setAttribute('fill', currentColor);
+                
+                if (t < 1) {
+                    animationId = requestAnimationFrame(animate);
+                } else {
+                    isAnimating = false;
+                    // Move to next path
+                    currentPathIndex = (currentPathIndex + 1) % paths.length;
+                    if (currentPathIndex === 0) {
+                        currentPathIndex = 1;
+                    }
+                    const nextIndex = (currentPathIndex + 1) % paths.length;
+                    setTimeout(() => {
+                        animatePathWithColor(
+                            paths[currentPathIndex],
+                            paths[nextIndex],
+                            brandColors[currentPathIndex % brandColors.length],
+                            brandColors[nextIndex % brandColors.length]
+                        );
+                    }, 200);
+                }
+            }
+            
+            animationId = requestAnimationFrame(animate);
+        }
+        
+        // Start with color animation
+        setTimeout(() => {
+            animatePathWithColor(
+                paths[0],
+                paths[1],
+                brandColors[0],
+                brandColors[1]
+            );
+        }, 500);
+    </script>
+</body>
+</html>
+
