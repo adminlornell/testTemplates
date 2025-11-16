@@ -127,6 +127,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
+        }
+        
+        #path-morphing-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
         .hero h1 {
@@ -1209,11 +1216,11 @@
         // Initialize path morphing animation
         if (typeof flubber !== 'undefined' && typeof PathMorphing !== 'undefined') {
             window.pathMorphing = new PathMorphing('path-morphing-container', {
-                width: 300,
-                height: 300,
+                width: 200,
+                height: 200,
                 colors: ['#B22222', '#8B1A1A'],
-                duration: 800,
-                pauseBetween: 200
+                duration: 1000,
+                pauseBetween: 300
             });
         }
     </script>
