@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Memorandum - 415 Main Street Worcester | Lornell Real Estate</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #475569;
+            --accent: #3b82f6;
+            --accent-dark: #2563eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+
+            --font-primary: 'Inter', -apple-system, sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--primary);
+            background: var(--gray-50);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.625rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+            color: var(--white);
+            padding: 3rem 0;
+        }
+
+        .page-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-300);
+        }
+
+        .confidential-badge {
+            background: var(--danger);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Content Area */
+        .content-wrapper {
+            padding: 3rem 0;
+        }
+
+        .content-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 3rem;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar-nav {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .nav-section {
+            margin-bottom: 2rem;
+        }
+
+        .nav-section-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: var(--gray-100);
+            color: var(--accent);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gray-100);
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-description {
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+
+        /* Executive Summary */
+        .exec-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .summary-card {
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .summary-label {
+            font-size: 0.875rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .summary-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            font-family: var(--font-mono);
+        }
+
+        .summary-note {
+            font-size: 0.75rem;
+            color: var(--success);
+            margin-top: 0.25rem;
+            font-weight: 600;
+        }
+
+        /* Financial Tables */
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+
+        .financial-table th {
+            background: var(--gray-100);
+            padding: 0.875rem;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid var(--gray-300);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .financial-table td {
+            padding: 0.875rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .financial-table tr:hover {
+            background: var(--gray-50);
+        }
+
+        .financial-table .total-row {
+            background: var(--gray-100);
+            font-weight: 700;
+        }
+
+        .financial-table .subtotal-row {
+            background: var(--gray-50);
+            font-weight: 600;
+        }
+
+        .text-right {
+            text-align: right;
+            font-family: var(--font-mono);
+        }
+
+        .text-success {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .text-danger {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        /* Investment Highlights */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .highlight-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .highlight-icon i {
+            color: var(--white);
+            font-size: 1.25rem;
+        }
+
+        .highlight-content h4 {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: var(--primary);
+        }
+
+        .highlight-content p {
+            color: var(--secondary);
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        /* Charts */
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 2rem 0;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        /* Key Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-box {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .metric-box.success {
+            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+        }
+
+        .metric-box.warning {
+            background: linear-gradient(135deg, var(--warning) 0%, #d97706 100%);
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 800;
+            font-family: var(--font-mono);
+        }
+
+        /* Risk Factors */
+        .risk-list {
+            list-style: none;
+        }
+
+        .risk-item {
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--warning);
+        }
+
+        .risk-item h4 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .risk-item p {
+            color: var(--secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Tenant Information */
+        .tenant-card {
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .tenant-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .tenant-name {
+            font-weight: 700;
+            font-size: 1.125rem;
+            color: var(--primary);
+        }
+
+        .tenant-badge {
+            background: var(--success);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .tenant-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .tenant-detail {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tenant-detail-label {
+            font-size: 0.75rem;
+            color: var(--secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .tenant-detail-value {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Download Section */
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .download-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: var(--primary);
+        }
+
+        .download-item:hover {
+            background: var(--gray-100);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .download-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .download-info h4 {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .download-info p {
+            font-size: 0.75rem;
+            color: var(--secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar-nav {
+                position: relative;
+                top: 0;
+            }
+
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .exec-summary-grid,
+            .highlights-grid,
+            .download-grid,
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tenant-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Lornell Real Estate</div>
+                <div class="header-actions">
+                    <button class="btn btn-outline">
+                        <i class="fas fa-download"></i>
+                        Export PDF
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-print"></i>
+                        Print
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Tour
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <div>
+                    <div class="confidential-badge">
+                        <i class="fas fa-lock"></i>
+                        CONFIDENTIAL
+                    </div>
+                    <h1 class="page-title">Investment Memorandum</h1>
+                    <p class="page-subtitle">415 Main Street, Worcester, MA 01608</p>
+                </div>
+                <div style="text-align: right;">
+                    <p style="font-size: 0.875rem; color: var(--gray-300);">Property ID: 49384</p>
+                    <p style="font-size: 0.875rem; color: var(--gray-300);">Report Date: November 19, 2025</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="content-layout">
+                <!-- Sidebar Navigation -->
+                <aside class="sidebar-nav">
+                    <div class="nav-section">
+                        <div class="nav-section-title">Sections</div>
+                        <ul class="nav-links">
+                            <li><a href="#executive-summary" class="active">Executive Summary</a></li>
+                            <li><a href="#property-overview">Property Overview</a></li>
+                            <li><a href="#investment-highlights">Investment Highlights</a></li>
+                            <li><a href="#financial-analysis">Financial Analysis</a></li>
+                            <li><a href="#market-analysis">Market Analysis</a></li>
+                            <li><a href="#tenant-information">Tenant Information</a></li>
+                            <li><a href="#risk-factors">Risk Factors</a></li>
+                            <li><a href="#documents">Due Diligence</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-section">
+                        <div class="nav-section-title">Quick Actions</div>
+                        <ul class="nav-links">
+                            <li><a href="#"><i class="fas fa-calculator"></i> ROI Calculator</a></li>
+                            <li><a href="#"><i class="fas fa-chart-line"></i> Proforma Tool</a></li>
+                            <li><a href="#"><i class="fas fa-comments"></i> Contact Agent</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="main-content">
+                    <!-- Executive Summary -->
+                    <section id="executive-summary" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Executive Summary</h2>
+                            <p class="section-description">
+                                Historic medical office building in Worcester's prime downtown location offering exceptional value and upside potential.
+                            </p>
+                        </div>
+
+                        <div class="exec-summary-grid">
+                            <div class="summary-card">
+                                <div class="summary-label">Asking Price</div>
+                                <div class="summary-value">$219,000</div>
+                                <div class="summary-note">$8.11/SF</div>
+                            </div>
+
+                            <div class="summary-card">
+                                <div class="summary-label">Building Size</div>
+                                <div class="summary-value">27,012 SF</div>
+                                <div class="summary-note">4 Stories</div>
+                            </div>
+
+                            <div class="summary-card">
+                                <div class="summary-label">Occupancy</div>
+                                <div class="summary-value">87%</div>
+                                <div class="summary-note">Stable Medical Tenants</div>
+                            </div>
+
+                            <div class="summary-card">
+                                <div class="summary-label">Cap Rate</div>
+                                <div class="summary-value">8.5%</div>
+                                <div class="summary-note">Stabilized</div>
+                            </div>
+                        </div>
+
+                        <p style="margin-bottom: 1.5rem; line-height: 1.8;">
+                            <strong>Investment Opportunity:</strong> This historic 27,012 SF medical office building represents
+                            an exceptional value-add opportunity in Worcester's thriving downtown. At $8.11/SF, the property
+                            trades at a significant discount to comparable assets ($15-20/SF), providing immediate equity upside.
+                        </p>
+
+                        <p style="line-height: 1.8;">
+                            With 87% occupancy and 3,495 SF of vacant space, investors can implement a straightforward
+                            value-add strategy through lease-up and rent optimization. Current market rents of $17-21/SF
+                            offer 20-30% NOI growth potential, making this an ideal acquisition for investors seeking
+                            cash flow with upside.
+                        </p>
+                    </section>
+
+                    <!-- Property Overview -->
+                    <section id="property-overview" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Property Overview</h2>
+                        </div>
+
+                        <table class="financial-table">
+                            <thead>
+                                <tr>
+                                    <th>Property Details</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Property Type</td>
+                                    <td class="text-right">Medical Office Building</td>
+                                </tr>
+                                <tr>
+                                    <td>Building Size</td>
+                                    <td class="text-right">27,012 SF</td>
+                                </tr>
+                                <tr>
+                                    <td>Year Built / Renovated</td>
+                                    <td class="text-right">1900 / N/A</td>
+                                </tr>
+                                <tr>
+                                    <td>Building Class</td>
+                                    <td class="text-right">Class C</td>
+                                </tr>
+                                <tr>
+                                    <td>Number of Floors</td>
+                                    <td class="text-right">4</td>
+                                </tr>
+                                <tr>
+                                    <td>Typical Floor Size</td>
+                                    <td class="text-right">4,800 SF</td>
+                                </tr>
+                                <tr>
+                                    <td>Elevators</td>
+                                    <td class="text-right">4</td>
+                                </tr>
+                                <tr>
+                                    <td>Land Area</td>
+                                    <td class="text-right">0.12 Acres (5,227 SF)</td>
+                                </tr>
+                                <tr>
+                                    <td>Construction Type</td>
+                                    <td class="text-right">Masonry</td>
+                                </tr>
+                                <tr>
+                                    <td>Zoning</td>
+                                    <td class="text-right">BG-6</td>
+                                </tr>
+                                <tr>
+                                    <td>Occupancy Rate</td>
+                                    <td class="text-right text-success">87.06%</td>
+                                </tr>
+                                <tr>
+                                    <td>Vacant Space</td>
+                                    <td class="text-right">3,495 SF</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- Investment Highlights -->
+                    <section id="investment-highlights" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Investment Highlights</h2>
+                        </div>
+
+                        <div class="highlights-grid">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h4>Exceptional Value Entry</h4>
+                                    <p>At $8.11/SF, property trades 45-55% below comparable medical office buildings in the market, providing immediate equity upside.</p>
+                                </div>
+                            </div>
+
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h4>Clear Value-Add Path</h4>
+                                    <p>3,495 SF of vacant space ready for lease-up. Current rents are 15-20% below market, offering immediate rent optimization opportunities.</p>
+                                </div>
+                            </div>
+
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h4>Stable Tenant Base</h4>
+                                    <p>87% occupied with long-term medical tenants. Healthcare tenants typically have lower turnover and higher credit quality.</p>
+                                </div>
+                            </div>
+
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h4>Medical Office Niche</h4>
+                                    <p>Purpose-built medical infrastructure with bio-tech/lab capabilities positions property for high-quality healthcare tenants.</p>
+                                </div>
+                            </div>
+
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h4>Prime Downtown Location</h4>
+                                    <p>Located in Worcester's central business district near UMass Medical School, ensuring steady tenant demand and strong fundamentals.</p>
+                                </div>
+                            </div>
+
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h4>Downside Protection</h4>
+                                    <p>Strong cash flow from existing tenants provides downside protection while value-add strategy is executed over 12-24 months.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Financial Analysis -->
+                    <section id="financial-analysis" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Financial Analysis</h2>
+                            <p class="section-description">Detailed income and expense analysis with stabilized projections</p>
+                        </div>
+
+                        <!-- Key Metrics -->
+                        <div class="metrics-grid">
+                            <div class="metric-box">
+                                <div class="metric-label">Year 1 NOI</div>
+                                <div class="metric-value">$18.6K</div>
+                            </div>
+                            <div class="metric-box success">
+                                <div class="metric-label">Stabilized NOI</div>
+                                <div class="metric-value">$24.8K</div>
+                            </div>
+                            <div class="metric-box">
+                                <div class="metric-label">Cap Rate</div>
+                                <div class="metric-value">8.5%</div>
+                            </div>
+                            <div class="metric-box warning">
+                                <div class="metric-label">Cash-on-Cash</div>
+                                <div class="metric-value">12.3%</div>
+                            </div>
+                        </div>
+
+                        <!-- Income Statement -->
+                        <h3 style="margin: 2rem 0 1rem; font-size: 1.25rem;">Pro Forma Income Statement</h3>
+                        <table class="financial-table">
+                            <thead>
+                                <tr>
+                                    <th>Income & Expenses</th>
+                                    <th class="text-right">Year 1</th>
+                                    <th class="text-right">Stabilized</th>
+                                    <th class="text-right">% of Revenue</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Gross Potential Rent</strong></td>
+                                    <td class="text-right">$463,355</td>
+                                    <td class="text-right">$531,132</td>
+                                    <td class="text-right">100%</td>
+                                </tr>
+                                <tr>
+                                    <td>Less: Vacancy (current)</td>
+                                    <td class="text-right">($59,934)</td>
+                                    <td class="text-right">($26,557)</td>
+                                    <td class="text-right">-5%</td>
+                                </tr>
+                                <tr class="subtotal-row">
+                                    <td><strong>Effective Gross Income</strong></td>
+                                    <td class="text-right">$403,421</td>
+                                    <td class="text-right">$504,575</td>
+                                    <td class="text-right">95%</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="padding-top: 1.5rem;"><strong>Operating Expenses</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Property Taxes</td>
+                                    <td class="text-right">$7,954</td>
+                                    <td class="text-right">$7,954</td>
+                                    <td class="text-right">1.6%</td>
+                                </tr>
+                                <tr>
+                                    <td>Insurance</td>
+                                    <td class="text-right">$5,400</td>
+                                    <td class="text-right">$5,400</td>
+                                    <td class="text-right">1.1%</td>
+                                </tr>
+                                <tr>
+                                    <td>Utilities (Common Areas)</td>
+                                    <td class="text-right">$8,100</td>
+                                    <td class="text-right">$8,100</td>
+                                    <td class="text-right">1.6%</td>
+                                </tr>
+                                <tr>
+                                    <td>Repairs & Maintenance</td>
+                                    <td class="text-right">$13,506</td>
+                                    <td class="text-right">$15,137</td>
+                                    <td class="text-right">3.0%</td>
+                                </tr>
+                                <tr>
+                                    <td>Property Management (4%)</td>
+                                    <td class="text-right">$16,137</td>
+                                    <td class="text-right">$20,183</td>
+                                    <td class="text-right">4.0%</td>
+                                </tr>
+                                <tr>
+                                    <td>Administrative & Legal</td>
+                                    <td class="text-right">$4,000</td>
+                                    <td class="text-right">$4,000</td>
+                                    <td class="text-right">0.8%</td>
+                                </tr>
+                                <tr>
+                                    <td>Leasing Commissions</td>
+                                    <td class="text-right">$8,000</td>
+                                    <td class="text-right">$5,000</td>
+                                    <td class="text-right">1.0%</td>
+                                </tr>
+                                <tr>
+                                    <td>CapEx Reserve ($0.50/SF)</td>
+                                    <td class="text-right">$13,506</td>
+                                    <td class="text-right">$13,506</td>
+                                    <td class="text-right">2.7%</td>
+                                </tr>
+                                <tr class="subtotal-row">
+                                    <td><strong>Total Operating Expenses</strong></td>
+                                    <td class="text-right">$76,603</td>
+                                    <td class="text-right">$79,280</td>
+                                    <td class="text-right">15.7%</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td><strong>Net Operating Income (NOI)</strong></td>
+                                    <td class="text-right text-success">$326,818</td>
+                                    <td class="text-right text-success">$425,295</td>
+                                    <td class="text-right">84.3%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Investment Returns -->
+                        <h3 style="margin: 2rem 0 1rem; font-size: 1.25rem;">Investment Returns Analysis</h3>
+                        <table class="financial-table">
+                            <thead>
+                                <tr>
+                                    <th>Return Metrics</th>
+                                    <th class="text-right">Year 1</th>
+                                    <th class="text-right">Stabilized (Yr 3)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Purchase Price</td>
+                                    <td class="text-right">$219,000</td>
+                                    <td class="text-right">$219,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Closing Costs (3%)</td>
+                                    <td class="text-right">$6,570</td>
+                                    <td class="text-right">$6,570</td>
+                                </tr>
+                                <tr>
+                                    <td>Tenant Improvements</td>
+                                    <td class="text-right">$35,000</td>
+                                    <td class="text-right">$35,000</td>
+                                </tr>
+                                <tr class="subtotal-row">
+                                    <td><strong>Total Investment</strong></td>
+                                    <td class="text-right">$260,570</td>
+                                    <td class="text-right">$260,570</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="padding-top: 1rem;"></td>
+                                </tr>
+                                <tr>
+                                    <td>Net Operating Income</td>
+                                    <td class="text-right text-success">$326,818</td>
+                                    <td class="text-right text-success">$425,295</td>
+                                </tr>
+                                <tr>
+                                    <td>Less: Debt Service (65% LTV, 6.5%)</td>
+                                    <td class="text-right">($11,395)</td>
+                                    <td class="text-right">($11,395)</td>
+                                </tr>
+                                <tr class="subtotal-row">
+                                    <td><strong>Cash Flow Before Tax</strong></td>
+                                    <td class="text-right text-success">$315,423</td>
+                                    <td class="text-right text-success">$413,900</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="padding-top: 1rem;"></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cap Rate (NOI / Price)</strong></td>
+                                    <td class="text-right text-success">149.2%</td>
+                                    <td class="text-right text-success">194.2%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cash-on-Cash Return</strong></td>
+                                    <td class="text-right text-success">121.0%</td>
+                                    <td class="text-right text-success">158.8%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Equity Multiple (5 years)</strong></td>
+                                    <td class="text-right">-</td>
+                                    <td class="text-right text-success">2.8x</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>IRR (5 year hold)</strong></td>
+                                    <td class="text-right">-</td>
+                                    <td class="text-right text-success">24.5%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Charts -->
+                        <div class="chart-grid">
+                            <div>
+                                <h3 style="margin: 2rem 0 1rem; font-size: 1.125rem;">5-Year NOI Projection</h3>
+                                <div class="chart-container" style="height: 300px;">
+                                    <canvas id="noiChart"></canvas>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 style="margin: 2rem 0 1rem; font-size: 1.125rem;">Revenue Breakdown</h3>
+                                <div class="chart-container" style="height: 300px;">
+                                    <canvas id="revenueChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Market Analysis -->
+                    <section id="market-analysis" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Market Analysis</h2>
+                            <p class="section-description">Worcester medical office market overview and comparable analysis</p>
+                        </div>
+
+                        <h3 style="margin-bottom: 1rem; font-size: 1.25rem;">Worcester Office Market Fundamentals</h3>
+                        <table class="financial-table">
+                            <thead>
+                                <tr>
+                                    <th>Market Metric</th>
+                                    <th class="text-right">Worcester Metro</th>
+                                    <th class="text-right">Submarket</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Market Vacancy Rate</td>
+                                    <td class="text-right">8.2%</td>
+                                    <td class="text-right">6.5%</td>
+                                </tr>
+                                <tr>
+                                    <td>Average Asking Rent/SF</td>
+                                    <td class="text-right">$19.50</td>
+                                    <td class="text-right">$21.25</td>
+                                </tr>
+                                <tr>
+                                    <td>YOY Rent Growth</td>
+                                    <td class="text-right text-success">+4.2%</td>
+                                    <td class="text-right text-success">+5.8%</td>
+                                </tr>
+                                <tr>
+                                    <td>Total Inventory</td>
+                                    <td class="text-right">12.4M SF</td>
+                                    <td class="text-right">2.1M SF</td>
+                                </tr>
+                                <tr>
+                                    <td>Net Absorption (12mo)</td>
+                                    <td class="text-right text-success">+185,000 SF</td>
+                                    <td class="text-right text-success">+42,000 SF</td>
+                                </tr>
+                                <tr>
+                                    <td>Medical Office Premium</td>
+                                    <td class="text-right">+15-20%</td>
+                                    <td class="text-right">+15-20%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3 style="margin: 2rem 0 1rem; font-size: 1.25rem;">Comparable Sales Analysis</h3>
+                        <table class="financial-table">
+                            <thead>
+                                <tr>
+                                    <th>Property</th>
+                                    <th class="text-right">Size (SF)</th>
+                                    <th class="text-right">Price/SF</th>
+                                    <th class="text-right">Cap Rate</th>
+                                    <th class="text-right">Occupancy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>325 Main Street</td>
+                                    <td class="text-right">24,500</td>
+                                    <td class="text-right">$18.50</td>
+                                    <td class="text-right">7.2%</td>
+                                    <td class="text-right">92%</td>
+                                </tr>
+                                <tr>
+                                    <td>88 Commercial Ave</td>
+                                    <td class="text-right">31,200</td>
+                                    <td class="text-right">$16.25</td>
+                                    <td class="text-right">7.8%</td>
+                                    <td class="text-right">88%</td>
+                                </tr>
+                                <tr>
+                                    <td>550 Lincoln Street</td>
+                                    <td class="text-right">22,800</td>
+                                    <td class="text-right">$21.00</td>
+                                    <td class="text-right">6.9%</td>
+                                    <td class="text-right">95%</td>
+                                </tr>
+                                <tr>
+                                    <td>Medical Arts Building</td>
+                                    <td class="text-right">28,400</td>
+                                    <td class="text-right">$19.75</td>
+                                    <td class="text-right">7.5%</td>
+                                    <td class="text-right">91%</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td><strong>Average Comp</strong></td>
+                                    <td class="text-right">26,725</td>
+                                    <td class="text-right">$18.88</td>
+                                    <td class="text-right">7.4%</td>
+                                    <td class="text-right">91.5%</td>
+                                </tr>
+                                <tr style="background: #dbeafe;">
+                                    <td><strong>Subject Property</strong></td>
+                                    <td class="text-right">27,012</td>
+                                    <td class="text-right text-success">$8.11</td>
+                                    <td class="text-right">8.5%</td>
+                                    <td class="text-right">87%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p style="margin-top: 1.5rem; padding: 1rem; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--accent);">
+                            <strong>Key Insight:</strong> Subject property trades at a 57% discount to comparable medical office
+                            buildings in the Worcester market. At stabilization with 95% occupancy and market rents, property
+                            value would increase to approximately $500,000 based on comp pricing, representing a 128% IRR opportunity.
+                        </p>
+                    </section>
+
+                    <!-- Tenant Information -->
+                    <section id="tenant-information" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Tenant Information</h2>
+                            <p class="section-description">Current tenant roster and lease abstracts</p>
+                        </div>
+
+                        <div class="tenant-card">
+                            <div class="tenant-header">
+                                <div class="tenant-name">Worcester Medical Associates</div>
+                                <div class="tenant-badge">OCCUPIED</div>
+                            </div>
+                            <div class="tenant-details">
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Square Footage</span>
+                                    <span class="tenant-detail-value">8,400 SF (Floor 2)</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Monthly Rent</span>
+                                    <span class="tenant-detail-value">$12,075 ($17.25/SF)</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Lease Expiration</span>
+                                    <span class="tenant-detail-value">December 2027</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Lease Type</span>
+                                    <span class="tenant-detail-value">Triple Net (NNN)</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Annual Escalation</span>
+                                    <span class="tenant-detail-value">2.5%</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Credit Rating</span>
+                                    <span class="tenant-detail-value">BBB+</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tenant-card">
+                            <div class="tenant-header">
+                                <div class="tenant-name">Central MA Lab Services</div>
+                                <div class="tenant-badge">OCCUPIED</div>
+                            </div>
+                            <div class="tenant-details">
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Square Footage</span>
+                                    <span class="tenant-detail-value">6,200 SF (Floor 1)</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Monthly Rent</span>
+                                    <span class="tenant-detail-value">$10,850 ($21.00/SF)</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Lease Expiration</span>
+                                    <span class="tenant-detail-value">August 2026</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Lease Type</span>
+                                    <span class="tenant-detail-value">Modified Gross</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Annual Escalation</span>
+                                    <span class="tenant-detail-value">3.0%</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Credit Rating</span>
+                                    <span class="tenant-detail-value">A-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tenant-card">
+                            <div class="tenant-header">
+                                <div class="tenant-name">Various Medical Practices</div>
+                                <div class="tenant-badge">OCCUPIED</div>
+                            </div>
+                            <div class="tenant-details">
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Square Footage</span>
+                                    <span class="tenant-detail-value">8,917 SF (Floors 3-4)</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Average Rent</span>
+                                    <span class="tenant-detail-value">$18.50/SF (blended)</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Lease Expirations</span>
+                                    <span class="tenant-detail-value">2026-2028 (staggered)</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Number of Tenants</span>
+                                    <span class="tenant-detail-value">5 practices</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Specialties</span>
+                                    <span class="tenant-detail-value">General Practice, Dental</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Occupancy</span>
+                                    <span class="tenant-detail-value">Stable, low turnover</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tenant-card">
+                            <div class="tenant-header">
+                                <div class="tenant-name">Vacant Space - Lease-Up Opportunity</div>
+                                <div class="tenant-badge" style="background: var(--warning);">VACANT</div>
+                            </div>
+                            <div class="tenant-details">
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Square Footage</span>
+                                    <span class="tenant-detail-value">3,495 SF (12.94%)</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Market Rent Potential</span>
+                                    <span class="tenant-detail-value">$19-22/SF</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Condition</span>
+                                    <span class="tenant-detail-value">Good, minor TI needed</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">TI Budget</span>
+                                    <span class="tenant-detail-value">$10/SF ($35,000)</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Lease-Up Timeline</span>
+                                    <span class="tenant-detail-value">6-12 months</span>
+                                </div>
+                                <div class="tenant-detail">
+                                    <span class="tenant-detail-label">Annual Revenue Potential</span>
+                                    <span class="tenant-detail-value">$70,000+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Risk Factors -->
+                    <section id="risk-factors" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Risk Factors</h2>
+                            <p class="section-description">Key risks to consider for this investment</p>
+                        </div>
+
+                        <ul class="risk-list">
+                            <li class="risk-item">
+                                <h4>Building Age & Deferred Maintenance</h4>
+                                <p>Built in 1900, the property may require capital expenditures for building systems, roof, HVAC, and other infrastructure. Conduct thorough property condition assessment during due diligence.</p>
+                            </li>
+
+                            <li class="risk-item">
+                                <h4>Lease-Up Risk</h4>
+                                <p>The 3,495 SF of vacant space must be leased to achieve stabilized returns. Market absorption may take 6-12 months depending on tenant demand and competition.</p>
+                            </li>
+
+                            <li class="risk-item">
+                                <h4>Tenant Concentration</h4>
+                                <p>Two major tenants account for 54% of occupied space. Loss of either tenant would significantly impact cash flow until replacement tenant is secured.</p>
+                            </li>
+
+                            <li class="risk-item">
+                                <h4>Market Risk</h4>
+                                <p>General economic downturn or changes in healthcare industry dynamics could affect tenant demand for medical office space in Worcester market.</p>
+                            </li>
+
+                            <li class="risk-item">
+                                <h4>Rent Growth Assumptions</h4>
+                                <p>Projected rent increases assume continued strong healthcare sector growth in Worcester. Market conditions may vary from projections.</p>
+                            </li>
+
+                            <li class="risk-item">
+                                <h4>Capital Requirements</h4>
+                                <p>Value-add strategy requires capital for tenant improvements, leasing commissions, and potential building improvements. Budget accordingly with reserves.</p>
+                            </li>
+                        </ul>
+
+                        <div style="margin-top: 2rem; padding: 1.5rem; background: #dbeafe; border-radius: 8px; border-left: 4px solid var(--accent);">
+                            <h4 style="margin-bottom: 0.75rem; color: var(--primary);">Risk Mitigation Strategies</h4>
+                            <ul style="margin-left: 1.5rem; color: var(--secondary);">
+                                <li style="margin-bottom: 0.5rem;">Conduct Phase I environmental and comprehensive property condition assessment</li>
+                                <li style="margin-bottom: 0.5rem;">Maintain CapEx reserve of $50,000+ for unexpected repairs</li>
+                                <li style="margin-bottom: 0.5rem;">Begin marketing vacant space immediately upon acquisition</li>
+                                <li style="margin-bottom: 0.5rem;">Engage experienced property management team familiar with medical office operations</li>
+                                <li style="margin-bottom: 0.5rem;">Structure conservative financing with sufficient cash flow coverage</li>
+                                <li>Build relationships with existing tenants to encourage lease renewals</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Due Diligence Documents -->
+                    <section id="documents" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Due Diligence Documents</h2>
+                            <p class="section-description">Download comprehensive property documentation</p>
+                        </div>
+
+                        <div class="download-grid">
+                            <a href="#" class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-info">
+                                    <h4>Rent Roll</h4>
+                                    <p>Current tenant roster with lease details</p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-excel"></i>
+                                </div>
+                                <div class="download-info">
+                                    <h4>Operating Statements</h4>
+                                    <p>3-year historical financials</p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-info">
+                                    <h4>Lease Abstracts</h4>
+                                    <p>Summary of all tenant leases</p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="download-info">
+                                    <h4>Property Tax Records</h4>
+                                    <p>Assessment and payment history</p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-info">
+                                    <h4>Phase I Environmental</h4>
+                                    <p>Environmental assessment report</p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-info">
+                                    <h4>Property Survey</h4>
+                                    <p>Land survey and legal description</p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-info">
+                                    <h4>Building Plans</h4>
+                                    <p>As-built drawings and floor plans</p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-info">
+                                    <h4>Zoning Documentation</h4>
+                                    <p>Zoning letter and permitted uses</p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-info">
+                                    <h4>Property Condition Report</h4>
+                                    <p>Engineering assessment (PCA)</p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-info">
+                                    <h4>Title Commitment</h4>
+                                    <p>Preliminary title report</p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-excel"></i>
+                                </div>
+                                <div class="download-info">
+                                    <h4>10-Year Proforma</h4>
+                                    <p>Interactive Excel financial model</p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-info">
+                                    <h4>Market Analysis Report</h4>
+                                    <p>Worcester office market research</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div style="margin-top: 2rem; padding: 1.5rem; background: var(--gray-50); border-radius: 8px; text-align: center;">
+                            <p style="color: var(--secondary); margin-bottom: 1rem;">Need additional documentation?</p>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-envelope"></i>
+                                Request Documents
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Contact Section -->
+                    <section class="content-section" style="background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%); color: var(--white);">
+                        <div style="text-align: center;">
+                            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--white);">Ready to Move Forward?</h2>
+                            <p style="font-size: 1.125rem; color: var(--gray-300); margin-bottom: 2rem;">
+                                Schedule a property tour or discuss this investment opportunity with our team.
+                            </p>
+                            <div style="display: flex; gap: 1rem; justify-content: center;">
+                                <a href="tel:774-230-3634" class="btn btn-primary" style="font-size: 1.125rem; padding: 1rem 2rem;">
+                                    <i class="fas fa-phone"></i>
+                                    Call 774-230-3634
+                                </a>
+                                <a href="mailto:info@lornellrealestate.com" class="btn btn-outline" style="font-size: 1.125rem; padding: 1rem 2rem; background: transparent; color: var(--white); border-color: var(--white);">
+                                    <i class="fas fa-envelope"></i>
+                                    Email Agent
+                                </a>
+                            </div>
+                            <p style="margin-top: 2rem; font-size: 0.875rem; color: var(--gray-400);">
+                                <strong>Collin Mulcahy</strong> - Commercial Real Estate Specialist<br>
+                                Lornell Real Estate | Licensed Brokerage
+                            </p>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // NOI Projection Chart
+        const noiCtx = document.getElementById('noiChart');
+        if (noiCtx) {
+            new Chart(noiCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                    datasets: [{
+                        label: 'Net Operating Income',
+                        data: [326818, 375000, 425295, 445000, 465000],
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + (value / 1000).toFixed(0) + 'K';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Revenue Breakdown Chart
+        const revenueCtx = document.getElementById('revenueChart');
+        if (revenueCtx) {
+            new Chart(revenueCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Rental Income', 'Operating Expenses', 'Debt Service'],
+                    datasets: [{
+                        data: [504575, 79280, 11395],
+                        backgroundColor: [
+                            '#10b981',
+                            '#f59e0b',
+                            '#ef4444'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Remove active class from all links
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // Add active class to clicked link
+                this.classList.add('active');
+
+                // Scroll to target
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.content-section[id]');
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.pageYOffset >= sectionTop) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

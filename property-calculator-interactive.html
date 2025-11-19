@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculator - 415 Main Street | Lornell Real Estate</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #3b82f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-800: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--gray-50);
+            padding: 2rem;
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            color: #64748b;
+            font-size: 1.125rem;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .calculator-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gray-100);
+        }
+
+        .card-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-header p {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .input-help {
+            color: #64748b;
+            font-size: 0.75rem;
+            cursor: help;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .input-with-prefix {
+            position: relative;
+        }
+
+        .input-prefix {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .input-with-prefix input {
+            padding-left: 2rem;
+        }
+
+        .slider-container {
+            margin-top: 0.5rem;
+        }
+
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: var(--gray-200);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent);
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent);
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            border: none;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, var(--accent) 0%, #2563eb 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .result-box.success {
+            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+        }
+
+        .result-box.warning {
+            background: linear-gradient(135deg, var(--warning) 0%, #d97706 100%);
+        }
+
+        .result-label {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-value {
+            font-size: 2rem;
+            font-weight: 800;
+            font-family: 'SF Mono', 'Monaco', monospace;
+        }
+
+        .result-note {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        .breakdown-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--gray-100);
+        }
+
+        .breakdown-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .breakdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .breakdown-label {
+            color: #64748b;
+        }
+
+        .breakdown-value {
+            font-weight: 700;
+        }
+
+        .breakdown-total {
+            background: var(--gray-50);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            padding: 0.875rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            font-size: 1rem;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+
+        .alert-info {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .alert-success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .alert-warning {
+            background: #fed7aa;
+            color: #92400e;
+        }
+
+        .alert i {
+            font-size: 1.25rem;
+            margin-top: 0.125rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin-top: 2rem;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+
+        .comparison-table th {
+            background: var(--gray-100);
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid var(--gray-200);
+        }
+
+        .comparison-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .comparison-table tr:hover {
+            background: var(--gray-50);
+        }
+
+        @media (max-width: 1024px) {
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Investment Calculators</h1>
+            <p>Analyze the financial potential of 415 Main Street, Worcester</p>
+        </div>
+
+        <div class="calculator-grid">
+            <!-- ROI Calculator -->
+            <div class="calculator-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-chart-line"></i> ROI Calculator</h2>
+                    <p>Calculate your return on investment with custom financing terms</p>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">
+                        <span>Purchase Price</span>
+                        <span class="input-help" title="Asking price of the property"><i class="fas fa-info-circle"></i></span>
+                    </label>
+                    <div class="input-with-prefix">
+                        <span class="input-prefix">$</span>
+                        <input type="number" class="input-field" id="purchasePrice" value="219000" step="1000">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">
+                        <span>Down Payment</span>
+                        <span id="downPaymentPercent">35%</span>
+                    </label>
+                    <input type="range" class="slider" id="downPayment" min="10" max="100" value="35" step="5">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #64748b; margin-top: 0.25rem;">
+                        <span>10%</span>
+                        <span>Cash</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">
+                        <span>Interest Rate</span>
+                        <span id="interestRateValue">6.5%</span>
+                    </label>
+                    <input type="range" class="slider" id="interestRate" min="4" max="10" value="6.5" step="0.25">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #64748b; margin-top: 0.25rem;">
+                        <span>4%</span>
+                        <span>10%</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">
+                        <span>Loan Term (Years)</span>
+                        <span id="loanTermValue">30</span>
+                    </label>
+                    <input type="range" class="slider" id="loanTerm" min="10" max="30" value="30" step="5">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #64748b; margin-top: 0.25rem;">
+                        <span>10 years</span>
+                        <span>30 years</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">
+                        <span>Closing Costs</span>
+                    </label>
+                    <div class="input-with-prefix">
+                        <span class="input-prefix">$</span>
+                        <input type="number" class="input-field" id="closingCosts" value="6570" step="100">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">
+                        <span>Annual Rent Income</span>
+                    </label>
+                    <div class="input-with-prefix">
+                        <span class="input-prefix">$</span>
+                        <input type="number" class="input-field" id="annualRent" value="463355" step="1000">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">
+                        <span>Annual Operating Expenses</span>
+                    </label>
+                    <div class="input-with-prefix">
+                        <span class="input-prefix">$</span>
+                        <input type="number" class="input-field" id="operatingExpenses" value="76603" step="1000">
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="calculateROI()">
+                    <i class="fas fa-calculator"></i>
+                    Calculate Returns
+                </button>
+
+                <div class="results-grid" id="roiResults" style="display: none;">
+                    <div class="result-box">
+                        <div class="result-label">Monthly Payment</div>
+                        <div class="result-value" id="monthlyPayment">$0</div>
+                    </div>
+                    <div class="result-box success">
+                        <div class="result-label">Cash on Cash</div>
+                        <div class="result-value" id="cashOnCash">0%</div>
+                    </div>
+                    <div class="result-box warning">
+                        <div class="result-label">Cap Rate</div>
+                        <div class="result-value" id="capRate">0%</div>
+                    </div>
+                    <div class="result-box">
+                        <div class="result-label">Annual Cash Flow</div>
+                        <div class="result-value" id="annualCashFlow">$0</div>
+                    </div>
+                </div>
+
+                <div class="breakdown-section" id="roiBreakdown" style="display: none;">
+                    <h3>Investment Breakdown</h3>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Total Investment</span>
+                        <span class="breakdown-value" id="totalInvestment">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Annual NOI</span>
+                        <span class="breakdown-value" id="noi">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Annual Debt Service</span>
+                        <span class="breakdown-value" id="debtService">$0</span>
+                    </div>
+                    <div class="breakdown-total">
+                        <div class="breakdown-item">
+                            <span class="breakdown-label"><strong>Net Cash Flow</strong></span>
+                            <span class="breakdown-value" style="color: var(--success); font-size: 1.25rem;" id="netCashFlow">$0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mortgage Calculator -->
+            <div class="calculator-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-home"></i> Mortgage Calculator</h2>
+                    <p>Calculate monthly payments and amortization</p>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">
+                        <span>Loan Amount</span>
+                    </label>
+                    <div class="input-with-prefix">
+                        <span class="input-prefix">$</span>
+                        <input type="number" class="input-field" id="loanAmount" value="142350" step="1000">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">
+                        <span>Interest Rate (%)</span>
+                    </label>
+                    <input type="number" class="input-field" id="mortgageRate" value="6.5" step="0.1" max="15">
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">
+                        <span>Loan Term (Years)</span>
+                    </label>
+                    <select class="input-field" id="mortgageTerm">
+                        <option value="10">10 Years</option>
+                        <option value="15">15 Years</option>
+                        <option value="20">20 Years</option>
+                        <option value="25">25 Years</option>
+                        <option value="30" selected>30 Years</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary" onclick="calculateMortgage()">
+                    <i class="fas fa-calculator"></i>
+                    Calculate Payment
+                </button>
+
+                <div class="results-grid" id="mortgageResults" style="display: none;">
+                    <div class="result-box">
+                        <div class="result-label">Monthly Payment</div>
+                        <div class="result-value" id="mortgagePayment">$0</div>
+                        <div class="result-note">Principal + Interest</div>
+                    </div>
+                    <div class="result-box success">
+                        <div class="result-label">Total Paid</div>
+                        <div class="result-value" id="totalPaid">$0</div>
+                        <div class="result-note">Over loan term</div>
+                    </div>
+                </div>
+
+                <div class="breakdown-section" id="mortgageBreakdown" style="display: none;">
+                    <h3>Loan Summary</h3>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Loan Amount</span>
+                        <span class="breakdown-value" id="loanAmountDisplay">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Total Interest</span>
+                        <span class="breakdown-value" id="totalInterest">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Total Payments</span>
+                        <span class="breakdown-value" id="totalPayments">$0</span>
+                    </div>
+                </div>
+
+                <div class="alert alert-info" id="mortgageAlert" style="display: none;">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <strong>Tip:</strong> A shorter loan term means higher monthly payments but significantly less interest paid over the life of the loan.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario Comparison -->
+        <div class="calculator-card">
+            <div class="card-header">
+                <h2><i class="fas fa-chart-bar"></i> Scenario Comparison</h2>
+                <p>Compare different investment scenarios side-by-side</p>
+            </div>
+
+            <table class="comparison-table" id="comparisonTable">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Conservative</th>
+                        <th>Base Case</th>
+                        <th>Aggressive</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Purchase Price</td>
+                        <td>$219,000</td>
+                        <td>$219,000</td>
+                        <td>$219,000</td>
+                    </tr>
+                    <tr>
+                        <td>Down Payment</td>
+                        <td>50% ($109,500)</td>
+                        <td>35% ($76,650)</td>
+                        <td>20% ($43,800)</td>
+                    </tr>
+                    <tr>
+                        <td>Occupancy Assumption</td>
+                        <td>85%</td>
+                        <td>90%</td>
+                        <td>95%</td>
+                    </tr>
+                    <tr>
+                        <td>Avg Rent/SF</td>
+                        <td>$17.00</td>
+                        <td>$19.00</td>
+                        <td>$21.00</td>
+                    </tr>
+                    <tr>
+                        <td>Annual NOI</td>
+                        <td>$310,000</td>
+                        <td>$390,000</td>
+                        <td>$465,000</td>
+                    </tr>
+                    <tr>
+                        <td>Cap Rate</td>
+                        <td style="color: var(--success); font-weight: 700;">141.6%</td>
+                        <td style="color: var(--success); font-weight: 700;">178.1%</td>
+                        <td style="color: var(--success); font-weight: 700;">212.3%</td>
+                    </tr>
+                    <tr>
+                        <td>Cash-on-Cash Return</td>
+                        <td style="color: var(--success); font-weight: 700;">246.8%</td>
+                        <td style="color: var(--success); font-weight: 700;">425.0%</td>
+                        <td style="color: var(--success); font-weight: 700;">923.3%</td>
+                    </tr>
+                    <tr>
+                        <td>5-Year IRR</td>
+                        <td>18.5%</td>
+                        <td>24.5%</td>
+                        <td>32.8%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert alert-success">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                    <strong>All scenarios show strong returns!</strong> Even the conservative case delivers exceptional cash-on-cash returns, demonstrating the property's value proposition across different assumptions.
+                </div>
+            </div>
+        </div>
+
+        <!-- Lead Capture -->
+        <div class="calculator-card" style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: white; text-align: center;">
+            <h2 style="color: white; margin-bottom: 1rem; font-size: 2rem;">Ready to Move Forward?</h2>
+            <p style="opacity: 0.9; margin-bottom: 2rem; font-size: 1.125rem;">
+                Get a personalized investment analysis and schedule a property tour
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <button class="btn btn-primary" style="background: white; color: var(--primary); max-width: 250px;">
+                    <i class="fas fa-calendar"></i>
+                    Schedule Tour
+                </button>
+                <button class="btn btn-outline" style="border-color: white; color: white; max-width: 250px;">
+                    <i class="fas fa-file-pdf"></i>
+                    Download Full Analysis
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update slider displays
+        document.getElementById('downPayment').addEventListener('input', function(e) {
+            document.getElementById('downPaymentPercent').textContent = e.target.value + '%';
+        });
+
+        document.getElementById('interestRate').addEventListener('input', function(e) {
+            document.getElementById('interestRateValue').textContent = e.target.value + '%';
+        });
+
+        document.getElementById('loanTerm').addEventListener('input', function(e) {
+            document.getElementById('loanTermValue').textContent = e.target.value;
+        });
+
+        // Calculate ROI
+        function calculateROI() {
+            const purchasePrice = parseFloat(document.getElementById('purchasePrice').value);
+            const downPaymentPercent = parseFloat(document.getElementById('downPayment').value) / 100;
+            const interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
+            const loanTerm = parseInt(document.getElementById('loanTerm').value);
+            const closingCosts = parseFloat(document.getElementById('closingCosts').value);
+            const annualRent = parseFloat(document.getElementById('annualRent').value);
+            const operatingExpenses = parseFloat(document.getElementById('operatingExpenses').value);
+
+            // Calculate loan details
+            const downPaymentAmount = purchasePrice * downPaymentPercent;
+            const loanAmount = purchasePrice - downPaymentAmount;
+            const monthlyRate = interestRate / 12;
+            const numPayments = loanTerm * 12;
+
+            // Monthly payment formula
+            const monthlyPayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) /
+                                  (Math.pow(1 + monthlyRate, numPayments) - 1);
+
+            const annualDebtService = monthlyPayment * 12;
+            const totalInvestment = downPaymentAmount + closingCosts;
+            const noi = annualRent - operatingExpenses;
+            const annualCashFlow = noi - annualDebtService;
+            const cashOnCash = (annualCashFlow / totalInvestment) * 100;
+            const capRate = (noi / purchasePrice) * 100;
+
+            // Display results
+            document.getElementById('roiResults').style.display = 'grid';
+            document.getElementById('roiBreakdown').style.display = 'block';
+
+            document.getElementById('monthlyPayment').textContent = '$' + monthlyPayment.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('cashOnCash').textContent = cashOnCash.toFixed(1) + '%';
+            document.getElementById('capRate').textContent = capRate.toFixed(1) + '%';
+            document.getElementById('annualCashFlow').textContent = '$' + annualCashFlow.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+            document.getElementById('totalInvestment').textContent = '$' + totalInvestment.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('noi').textContent = '$' + noi.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('debtService').textContent = '$' + annualDebtService.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('netCashFlow').textContent = '$' + annualCashFlow.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+        // Calculate Mortgage
+        function calculateMortgage() {
+            const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+            const annualRate = parseFloat(document.getElementById('mortgageRate').value) / 100;
+            const years = parseInt(document.getElementById('mortgageTerm').value);
+
+            const monthlyRate = annualRate / 12;
+            const numPayments = years * 12;
+
+            const monthlyPayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) /
+                                  (Math.pow(1 + monthlyRate, numPayments) - 1);
+
+            const totalPaid = monthlyPayment * numPayments;
+            const totalInterest = totalPaid - loanAmount;
+
+            // Display results
+            document.getElementById('mortgageResults').style.display = 'grid';
+            document.getElementById('mortgageBreakdown').style.display = 'block';
+            document.getElementById('mortgageAlert').style.display = 'flex';
+
+            document.getElementById('mortgagePayment').textContent = '$' + monthlyPayment.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('totalPaid').textContent = '$' + totalPaid.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+            document.getElementById('loanAmountDisplay').textContent = '$' + loanAmount.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('totalInterest').textContent = '$' + totalInterest.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('totalPayments').textContent = '$' + totalPaid.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+        // Calculate on page load
+        calculateROI();
+        calculateMortgage();
+    </script>
+</body>
+</html>
